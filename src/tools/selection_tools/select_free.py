@@ -83,6 +83,7 @@ class ToolFreeSelect(AbstractSelectionTool):
 			self.closing_y = event_y
 			cairo_context.move_to(event_x, event_y)
 			self._pre_load_path(cairo_context.copy_path())
+			self._notify_live_path_extents()
 			return False
 		delta_x = max(event_x, self.closing_x) - min(event_x, self.closing_x)
 		delta_y = max(event_y, self.closing_y) - min(event_y, self.closing_y)
@@ -91,6 +92,7 @@ class ToolFreeSelect(AbstractSelectionTool):
 			cairo_context.close_path()
 			cairo_context.stroke_preserve()
 			self._pre_load_path(cairo_context.copy_path())
+			self._notify_live_path_extents()
 			return True
 		else:
 			cairo_context.line_to(event_x, event_y)
@@ -98,7 +100,27 @@ class ToolFreeSelect(AbstractSelectionTool):
 			self._pre_load_path(cairo_context.copy_path())
 			if render:
 				self.non_destructive_show_modif()
+			self._notify_live_path_extents()
 			return False
+
+	def _notify_live_path_extents(self):
+		"""Compute bounding box from the future path and update the info label."""
+		future_path = self.get_selection().get_future_path()
+		if future_path is None:
+			return
+		xmin = float('inf')
+		ymin = float('inf')
+		xmax = float('-inf')
+		ymax = float('-inf')
+		for pts in future_path:
+			if pts[1] != ():
+				xmin = min(xmin, pts[1][0])
+				ymin = min(ymin, pts[1][1])
+				xmax = max(xmax, pts[1][0])
+				ymax = max(ymax, pts[1][1])
+		if xmin < xmax and ymin < ymax:
+			self._notify_selection_info(int(xmin), int(ymin),
+			                           int(xmax - xmin), int(ymax - ymin))
 
 	############################################################################
 ################################################################################

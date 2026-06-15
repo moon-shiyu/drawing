@@ -94,6 +94,38 @@ class AbstractSelectionTool(AbstractAbstractTool):
 	def has_ongoing_operation(self):
 		return False
 
+	def update_actions_state(self):
+		super().update_actions_state()
+		if not self.selection_is_active():
+			self._clear_selection_info()
+
+	def _notify_selection_info(self, x=None, y=None, width=None, height=None):
+		"""Update the options bar with the selection's position and dimensions.
+		If parameters are omitted, they are read from the selection manager."""
+		bottom_pane = self.window.options_manager.get_pane('selection')
+		if bottom_pane is None:
+			return
+		sel = self.get_selection()
+		if not sel.is_active and x is None:
+			bottom_pane.clear_selection_info()
+			return
+		if x is None:
+			x = sel.selection_x
+		if y is None:
+			y = sel.selection_y
+		if width is None or height is None:
+			width, height = sel.get_selection_dimensions()
+		if width <= 0 or height <= 0:
+			bottom_pane.clear_selection_info()
+			return
+		bottom_pane.set_selection_info(x, y, width, height)
+
+	def _clear_selection_info(self):
+		"""Clear the selection info label in the options bar."""
+		bottom_pane = self.window.options_manager.get_pane('selection')
+		if bottom_pane is not None:
+			bottom_pane.clear_selection_info()
+
 	############################################################################
 	############################################################################
 
@@ -143,6 +175,10 @@ class AbstractSelectionTool(AbstractAbstractTool):
 	def _preview_drag_to(self, event_x, event_y):
 		self.local_dx = event_x - self.x_press
 		self.local_dy = event_y - self.y_press
+		self._notify_selection_info(
+			x=self.get_selection().selection_x + self.local_dx,
+			y=self.get_selection().selection_y + self.local_dy,
+		)
 		self.non_destructive_show_modif()
 
 	def on_unclicked_motion_on_area(self, event, surface):
@@ -348,6 +384,7 @@ class AbstractSelectionTool(AbstractAbstractTool):
 		self._pre_load_coords(op['pixb_x'], op['pixb_y'])
 		self.get_selection().set_coords(False, op['pixb_x'], op['pixb_y'])
 		self.get_selection().set_pixbuf(op['pixbuf'].copy())
+		self._notify_selection_info()
 
 	def _op_replace_canvas(self, op):
 		if op['pixbuf'] is None:
@@ -372,6 +409,7 @@ class AbstractSelectionTool(AbstractAbstractTool):
 	def _op_drag(self, op):
 		# print("drag to :", op['pixb_x'], op['pixb_y'])
 		self.get_selection().set_coords(False, op['pixb_x'], op['pixb_y'])
+		self._notify_selection_info()
 		self.non_destructive_show_modif()
 
 	def _op_define(self, op):
@@ -383,6 +421,7 @@ class AbstractSelectionTool(AbstractAbstractTool):
 		else:
 			replacement = None
 		self.get_selection().load_from_path(op['initial_path'], replacement)
+		self._notify_selection_info()
 
 	def _op_apply(self, operation):
 		cairo_context = self.get_context()

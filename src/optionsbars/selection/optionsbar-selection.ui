@@ -171,6 +171,22 @@
     </child>
 
     <child>
+      <object class="GtkSeparator" id="selection_info_sep">
+        <property name="visible">False</property>
+        <property name="orientation">vertical</property>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkLabel" id="selection_info_label">
+        <property name="visible">False</property>
+        <property name="label"></property>
+        <property name="selectable">True</property>
+        <property name="tooltip-text" translatable="yes">Selection position and dimensions</property>
+      </object>
+    </child>
+
+    <child>
       <object class="GtkToggleButton" id="minimap_btn">
         <property name="valign">center</property>
         <property name="tooltip-text" translatable="yes">Preview</property>

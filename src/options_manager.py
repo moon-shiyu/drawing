@@ -192,6 +192,10 @@ class DrOptionsManager():
 	def get_active_pane(self):
 		return self._bottom_panes_dict[self._active_pane_id]
 
+	def get_pane(self, pane_id):
+		"""Return the bottom pane with the given id, or None if it doesn't exist."""
+		return self._bottom_panes_dict.get(pane_id, None)
+
 	def update_pane(self, tool):
 		self._bottom_panes_dict[tool.pane_id].update_for_new_tool(tool)
 
