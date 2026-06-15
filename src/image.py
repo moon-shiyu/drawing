@@ -23,6 +23,53 @@ from .properties import DrPropertiesDialog
 from .utilities_files import InvalidFileFormatException
 from .utilities_overlay import utilities_generic_canvas_outline
 
+################################################################################
+# Minimap overlay computation (pure math, no GUI dependencies) #################
+
+# Minimum size in pixels for the viewport indicator on the minimap so it
+# remains visible even at extreme zoom levels.
+MINIMAP_MIN_VIEWPORT_SIZE = 6
+
+def compute_minimap_overlay_rect(scroll_x, scroll_y,
+                                 visible_width, visible_height,
+                                 size_ratio,
+                                 mini_pix_width, mini_pix_height):
+	"""Compute the viewport rectangle for the minimap overlay.
+
+	Returns a tuple (x, y, width, height) representing the visible-area
+	indicator in minimap pixel coordinates, clamped to the minimap bounds
+	and enforcing a minimum visible size.
+
+	Parameters
+	----------
+	scroll_x, scroll_y : current scroll offsets in image coordinates
+	visible_width, visible_height : visible area in image coordinates
+	size_ratio : ratio of minimap pixel width to full image pixel width
+	mini_pix_width, mini_pix_height : dimensions of the minimap pixbuf
+	"""
+	# Raw position and size in minimap coordinates
+	raw_x = scroll_x * size_ratio
+	raw_y = scroll_y * size_ratio
+	raw_w = visible_width * size_ratio + 2  # +2 compensates int truncation
+	raw_h = visible_height * size_ratio + 2
+
+	# Enforce minimum size so the viewport box is always visible
+	rect_w = max(raw_w, MINIMAP_MIN_VIEWPORT_SIZE)
+	rect_h = max(raw_h, MINIMAP_MIN_VIEWPORT_SIZE)
+
+	# Clamp position so the rectangle stays within minimap bounds
+	rect_x = max(0.0, min(raw_x, mini_pix_width - rect_w))
+	rect_y = max(0.0, min(raw_y, mini_pix_height - rect_h))
+
+	# Final clamp: ensure width/height don't exceed the minimap even if the
+	# image is smaller than the minimum size
+	rect_w = min(rect_w, mini_pix_width)
+	rect_h = min(rect_h, mini_pix_height)
+
+	return (int(rect_x), int(rect_y), int(rect_w), int(rect_h))
+
+################################################################################
+
 class DrMotionBehavior():
 	_LIMIT = 10
 
@@ -685,6 +732,19 @@ class DrImage(Gtk.Box):
 		visible_width = int(self.get_widget_width() / self.zoom_level)
 		visible_height = int(self.get_widget_height() / self.zoom_level)
 		return visible_width, visible_height
+
+	def get_minimap_overlay_rect(self, mini_pix_width, mini_pix_height):
+		"""Compute the clamped, minimum-size-enforced viewport rectangle for
+		the minimap overlay. Returns (x, y, width, height) in minimap
+		coordinates."""
+		size_ratio = self.get_minimap_ratio(mini_pix_width)
+		visible_width, visible_height = self.get_visible_size()
+		return compute_minimap_overlay_rect(
+			self.scroll_x, self.scroll_y,
+			visible_width, visible_height,
+			size_ratio,
+			mini_pix_width, mini_pix_height
+		)
 
 	############################################################################
 	# Scroll and zoom levels ###################################################

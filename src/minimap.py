@@ -68,18 +68,24 @@ class DrMinimap(Gtk.Popover):
 		self._mini_surface = Gdk.cairo_surface_create_from_pixbuf( \
 		                                              self.mini_pixbuf, 0, None)
 		if image.get_minimap_need_overlay():
-			size_ratio = image.get_minimap_ratio(self.mini_pixbuf.get_width())
-			mini_x = int(image.scroll_x * size_ratio)
-			mini_y = int(image.scroll_y * size_ratio)
-			visible_width, visible_height = image.get_visible_size()
-			# We add pixels because those "int" truncate a pixel on each side
-			mini_width = int(visible_width * size_ratio) + 2
-			mini_height = int(visible_height * size_ratio) + 2
+			pix_width = self.mini_pixbuf.get_width()
+			pix_height = self.mini_pixbuf.get_height()
+			mini_x, mini_y, mini_width, mini_height = \
+				image.get_minimap_overlay_rect(pix_width, pix_height)
+
+			# Adaptive line width: thicker when the viewport box is small
+			# relative to the minimap, so it stays visible at high zoom
+			area_ratio = (mini_width * mini_height) / max(pix_width * pix_height, 1)
+			if area_ratio < 0.02:
+				line_width = 2.5
+			elif area_ratio < 0.10:
+				line_width = 1.5
+			else:
+				line_width = 1
 
 			# Set up a cairo context
 			mini_context = cairo.Context(self._mini_surface)
 			mini_context.new_path()
-			mini_context.set_line_width(1)
 			mini_context.set_antialias(cairo.Antialias.NONE)
 			mini_context.set_line_cap(cairo.LineCap.SQUARE)
 
@@ -91,8 +97,6 @@ class DrMinimap(Gtk.Popover):
 			mini_context.line_to(mini_x, mini_y)
 
 			# Path around the entire mini-surface
-			pix_width = self.mini_pixbuf.get_width()
-			pix_height = self.mini_pixbuf.get_height()
 			mini_context.move_to(0, 0)
 			mini_context.line_to(pix_width, 0)
 			# We add pixels because those "int" truncate a pixel on each side
@@ -104,9 +108,21 @@ class DrMinimap(Gtk.Popover):
 			mini_context.set_source_rgba(0.3, 0.3, 0.3, 0.2)
 			mini_context.fill_preserve()
 
-			# Draw the paths with grey
+			# Draw the outer paths with grey
+			mini_context.set_line_width(line_width)
 			mini_context.set_source_rgba(0.5, 0.5, 0.5, 1.0)
 			mini_context.stroke()
+
+			# Draw a bright inner border on the viewport rect for contrast
+			if area_ratio < 0.10:
+				mini_context.set_line_width(max(1, line_width - 1))
+				mini_context.set_source_rgba(1.0, 1.0, 1.0, 0.7)
+				inset = line_width
+				mini_context.rectangle(
+					mini_x + inset, mini_y + inset,
+					max(1, mini_width - 2 * inset),
+					max(1, mini_height - 2 * inset))
+				mini_context.stroke()
 		self._minimap_area.queue_draw()
 
 	############################################################################
