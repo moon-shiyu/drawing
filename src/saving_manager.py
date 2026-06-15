@@ -15,9 +15,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import os
+
 from gi.repository import Gtk, GdkPixbuf, GLib
 from .message_dialog import DrMessageDialog
-from .utilities_files import utilities_add_filechooser_filters
+from .utilities_files import utilities_add_filechooser_filters, \
+                              utilities_check_format_mismatch
 from .utilities_colors import utilities_rgb_to_hexadecimal
 
 ALL_SUPPORTED_FORMAT = ['jpeg', 'jpg', 'jpe', 'png', 'tiff', 'ico', 'bmp']
@@ -209,7 +212,9 @@ class DrSavingManager():
 			return False
 
 	def _file_chooser_save(self):
-		"""Opens an "save" file chooser dialog, and return a GioFile or None."""
+		"""Opens an "save" file chooser dialog, and return a GioFile or None.
+		If the file extension does not match the selected filter, the user is
+		prompted to confirm, auto-correct, or go back and change the name."""
 		gfile = None
 		file_chooser = Gtk.FileChooserNative.new(_("Save picture as…"),
 		       self._window, Gtk.FileChooserAction.SAVE, _("Save"), _("Cancel"))
@@ -225,8 +230,63 @@ class DrSavingManager():
 		response = file_chooser.run()
 		if response == Gtk.ResponseType.ACCEPT:
 			gfile = file_chooser.get_file()
+			active_filter = file_chooser.get_filter()
+			file_path = gfile.get_path()
+
+			is_consistent, filter_name, file_ext = \
+			    utilities_check_format_mismatch(file_path, active_filter)
+
+			if not is_consistent:
+				gfile = self._confirm_format_mismatch(
+					gfile, file_path, filter_name, file_ext)
 		file_chooser.destroy()
 		return gfile
+
+	############################################################################
+	# Format-mismatch confirmation dialog ######################################
+
+	def _confirm_format_mismatch(self, gfile, file_path, filter_name, file_ext):
+		"""Show a warning when the file extension does not match the filter the
+		user selected in the file-chooser.  Returns a (possibly corrected)
+		GioFile, or ``None`` if the user chose to go back and rename."""
+		from gi.repository import Gio
+
+		dialog = DrMessageDialog(self._window)
+
+		cancel_id = dialog.set_action(_("Cancel"), None)
+		# Context: keep the original (mismatched) file name
+		keep_id = dialog.set_action(_("Keep current name"), None)
+		# Context: automatically fix the extension to match the selected filter
+		correct_id = dialog.set_action(_("Auto-correct extension"), 'suggested-action', True)
+
+		if file_ext:
+			dialog.add_string(
+			    _("The extension '%s' does not match the selected " \
+			      "format '%s'.") % (file_ext, filter_name))
+		else:
+			dialog.add_string(
+			    _("The file name has no extension, but the selected " \
+			      "format is '%s'.") % filter_name)
+		dialog.add_string(
+		    _("You can keep the current name, let the app correct the " \
+		      "extension automatically, or go back and choose a different name."))
+
+		result = dialog.run()
+		dialog.destroy()
+
+		if result == correct_id:
+			corrected_ext = _first_ext_for_filter(filter_name)
+			if corrected_ext:
+				base, _ = os.path.splitext(file_path)
+				corrected_path = base + '.' + corrected_ext
+				return Gio.File.new_for_path(corrected_path)
+			# Fallback: if the filter name is unknown, keep the original
+			return gfile
+		elif result == keep_id:
+			return gfile
+		else:
+			# cancel → abort the save
+			return None
 
 	############################################################################
 	# Pixbuf transparency ######################################################
@@ -321,6 +381,21 @@ class DrSavingManager():
 
 	############################################################################
 ################################################################################
+
+def _first_ext_for_filter(filter_name):
+	"""Return the preferred extension (without dot) for a given file-chooser
+	filter name, or ``None`` if the filter is unrecognised."""
+	from .utilities_files import FILTER_EXTENSIONS
+	exts = FILTER_EXTENSIONS.get(filter_name)
+	if exts is None:
+		return None
+	# Prefer the most common / canonical extension per format group
+	preferred = {'png', 'jpg', 'bmp', 'svg'}
+	for ext in preferred:
+		if ext in exts:
+			return ext
+	# Fallback: return the first available extension
+	return next(iter(exts), None)
 
 class WantToCancelException(Exception):
 	def __init__(self):
