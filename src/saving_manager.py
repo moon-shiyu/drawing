@@ -17,7 +17,8 @@
 
 from gi.repository import Gtk, GdkPixbuf, GLib
 from .message_dialog import DrMessageDialog
-from .utilities_files import utilities_add_filechooser_filters
+from .utilities_files import utilities_add_filechooser_filters, \
+                             utilities_get_filter_expected_extensions
 from .utilities_colors import utilities_rgb_to_hexadecimal
 
 ALL_SUPPORTED_FORMAT = ['jpeg', 'jpg', 'jpe', 'png', 'tiff', 'ico', 'bmp']
@@ -43,14 +44,23 @@ class DrSavingManager():
 		image = self._window.get_active_image()
 
 		if image.get_file_path() is None or to_new or selection_only:
-			gfile = self._file_chooser_save()
+			gfile, expected_exts = self._file_chooser_save()
 		else:
 			gfile = image.gfile
+			expected_exts = None
 
 		if gfile is None:
 			return False
 		file_path = gfile.get_path()
 		file_format = self._get_format(file_path)
+
+		# Check for mismatch between the chosen filter and file extension
+		if expected_exts is not None:
+			file_ext = file_path.rsplit('.', 1)[-1].lower() if '.' in file_path else ''
+			if file_ext not in expected_exts:
+				if not self._confirm_format_mismatch(file_path, file_ext, expected_exts):
+					# The user wants to go back and fix the file name
+					return self.save_current_image(is_export, True, selection_only, allow_alpha)
 
 		if selection_only:
 			pixbuf = image.selection.get_pixbuf()
@@ -209,8 +219,11 @@ class DrSavingManager():
 			return False
 
 	def _file_chooser_save(self):
-		"""Opens an "save" file chooser dialog, and return a GioFile or None."""
+		"""Opens a "save" file chooser dialog, and return a tuple of (GioFile,
+		expected_extensions). expected_extensions is a list of extension strings
+		from the selected filter, or None if the catch-all filter was used."""
 		gfile = None
+		expected_exts = None
 		file_chooser = Gtk.FileChooserNative.new(_("Save picture as…"),
 		       self._window, Gtk.FileChooserAction.SAVE, _("Save"), _("Cancel"))
 		utilities_add_filechooser_filters(file_chooser)
@@ -225,8 +238,38 @@ class DrSavingManager():
 		response = file_chooser.run()
 		if response == Gtk.ResponseType.ACCEPT:
 			gfile = file_chooser.get_file()
+			selected_filter = file_chooser.get_filter()
+			expected_exts = utilities_get_filter_expected_extensions(selected_filter)
 		file_chooser.destroy()
-		return gfile
+		return gfile, expected_exts
+
+	def _confirm_format_mismatch(self, file_path, file_ext, expected_extensions):
+		"""Warn the user that the file extension does not match the image format
+		they selected in the file chooser filter. Returns True if the user wants
+		to proceed with saving, False if they want to go back."""
+		dialog = DrMessageDialog(self._window)
+		back_id = dialog.set_action(_("Go back"), 'suggested-action', True)
+		save_id = dialog.set_action(_("Save anyway"), 'destructive-action')
+
+		file_name = file_path.rsplit('/', 1)[-1] if '/' in file_path else file_path
+		if file_ext:
+			dialog.add_string(
+				_("The file extension ".%s" does not match the selected image format.") % file_ext
+			)
+		else:
+			dialog.add_string(
+				_("The file "%s" has no extension.") % file_name
+			)
+		expected_str = ", ".join("." + e for e in expected_extensions)
+		dialog.add_string(_("Expected extension: %s") % expected_str)
+		dialog.add_string(
+			_("The image will be saved based on the file extension, "
+			  "which may differ from what you intended.")
+		)
+
+		result = dialog.run()
+		dialog.destroy()
+		return result == save_id
 
 	############################################################################
 	# Pixbuf transparency ######################################################

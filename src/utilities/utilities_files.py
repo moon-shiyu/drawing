@@ -5,35 +5,47 @@ from gi.repository import Gtk, Gio
 ################################################################################
 
 def utilities_add_filechooser_filters(dialog):
-	"""Add file filters for images to file chooser dialogs."""
+	"""Add file filters for images to file chooser dialogs. Each filter carries
+	an `_expected_extensions` attribute listing the extensions it covers, or
+	None for the catch-all "All pictures" filter."""
 	allPictures = Gtk.FileFilter()
 	allPictures.set_name(_("All pictures"))
 	allPictures.add_mime_type('image/png')
 	allPictures.add_mime_type('image/jpeg')
 	allPictures.add_mime_type('image/bmp')
 	allPictures.add_mime_type('image/svg+xml')
+	allPictures._expected_extensions = None
 
 	pngPictures = Gtk.FileFilter()
 	pngPictures.set_name(_("PNG images"))
 	pngPictures.add_mime_type('image/png')
+	pngPictures._expected_extensions = ['png']
 
 	jpegPictures = Gtk.FileFilter()
 	jpegPictures.set_name(_("JPEG images"))
 	jpegPictures.add_mime_type('image/jpeg')
+	jpegPictures._expected_extensions = ['jpeg', 'jpg', 'jpe']
 
 	bmpPictures = Gtk.FileFilter()
 	bmpPictures.set_name(_("BMP images"))
 	bmpPictures.add_mime_type('image/bmp')
+	bmpPictures._expected_extensions = ['bmp']
 
 	svgPictures = Gtk.FileFilter()
 	svgPictures.set_name(_("SVG images"))
 	svgPictures.add_mime_type('image/svg+xml')
+	svgPictures._expected_extensions = ['svg']
 
 	dialog.add_filter(allPictures)
 	dialog.add_filter(pngPictures)
 	dialog.add_filter(jpegPictures)
 	dialog.add_filter(bmpPictures)
 	dialog.add_filter(svgPictures)
+
+def utilities_get_filter_expected_extensions(file_filter):
+	"""Return the list of expected extensions for a file filter, or None if the
+	filter accepts all image types (no specific extension expected)."""
+	return getattr(file_filter, '_expected_extensions', None)
 
 ################################################################################
 
