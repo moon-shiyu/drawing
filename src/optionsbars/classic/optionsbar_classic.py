@@ -88,6 +88,11 @@ class OptionsBarClassic(AbstractOptionsBar):
 	############################################################################
 	# Size #####################################################################
 
+	def set_size_value(self, value):
+		"""Programmatically set the thickness spinbutton value.
+		Used by the brush tool to restore per-brush saved sizes."""
+		self.thickness_spinbtn.set_value(value)
+
 	def _on_size_changed(self, *args):
 		self.window.on_tool_options_changed()
 

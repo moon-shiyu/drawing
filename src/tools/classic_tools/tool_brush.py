@@ -43,6 +43,13 @@ class ToolBrush(AbstractClassicTool):
 		self.add_tool_action_enum('brush-type', self._brush_type)
 		self.add_tool_action_enum('brush-dir', self._brush_dir)
 
+		# Per-brush parameter memory: each brush type remembers its last-used
+		# size so switching between brushes restores the appropriate width.
+		self._brushes_params = {}
+		self._prev_brush_type = 'simple'
+		self._restoring_brush_params = False
+		self._last_user_width = 10
+
 	def get_options_label(self):
 		return _("Brush options")
 
@@ -51,13 +58,52 @@ class ToolBrush(AbstractClassicTool):
 		return active_brush._get_tips(self._used_pressure, self._brush_dir)
 
 	def on_options_changed(self):
+		# Capture the spinbutton width BEFORE super() or any restore might
+		# overwrite it. This is the user's actual current width at the moment
+		# this callback fires, and is used for saving per-brush params.
+		current_width = int(self.window.options_manager.get_tool_width())
+
+		# When restoring brush params, set_value() fires value-changed which
+		# re-enters this method. The guard prevents recursive save/restore.
+		if self._restoring_brush_params:
+			super().on_options_changed()
+			self._restoring_brush_params = False
+			self._last_user_width = self.tool_width
+			return
+
 		super().on_options_changed()
+		old_type = self._prev_brush_type
 		self._brush_type = self.get_option_value('brush-type')
 		self._brush_dir = self.get_option_value('brush-dir')
 
 		enable_direction = self._brush_type == 'calligraphic'
 		self.set_action_sensitivity('brush-dir', enable_direction)
-		# refreshing the rendered operation isn't pertinent
+
+		if old_type != self._brush_type:
+			# Use the captured current_width (pre-restore) for saving so we
+			# never accidentally save a value that was overwritten by a restore.
+			self._save_brush_params(old_type, current_width)
+			self._restore_brush_params(self._brush_type)
+			self._prev_brush_type = self._brush_type
+			self._last_user_width = self.tool_width
+		else:
+			self._prev_brush_type = self._brush_type
+			self._last_user_width = self.tool_width
+
+	def _save_brush_params(self, brush_type, width):
+		"""Save the given width for the specified brush type."""
+		self._brushes_params[brush_type] = {'width': width}
+
+	def _restore_brush_params(self, brush_type):
+		"""Restore saved tool_width for the given brush type, if any."""
+		params = self._brushes_params.get(brush_type)
+		if params is None:
+			return
+		if 'width' in params:
+			self.tool_width = params['width']
+			optionsbar = self.window.options_manager.get_classic_tools_pane()
+			self._restoring_brush_params = True
+			optionsbar.set_size_value(self.tool_width)
 
 	############################################################################
 
