@@ -2,6 +2,7 @@
 
 import cairo
 from gi.repository import Gtk, Gdk, GdkPixbuf
+from .utilities_minimap import compute_minimap_rect
 
 class DrMinimap(Gtk.Popover):
 	__gtype_name__ = 'DrMinimap'
@@ -68,18 +69,18 @@ class DrMinimap(Gtk.Popover):
 		self._mini_surface = Gdk.cairo_surface_create_from_pixbuf( \
 		                                              self.mini_pixbuf, 0, None)
 		if image.get_minimap_need_overlay():
-			size_ratio = image.get_minimap_ratio(self.mini_pixbuf.get_width())
-			mini_x = int(image.scroll_x * size_ratio)
-			mini_y = int(image.scroll_y * size_ratio)
-			visible_width, visible_height = image.get_visible_size()
-			# We add pixels because those "int" truncate a pixel on each side
-			mini_width = int(visible_width * size_ratio) + 2
-			mini_height = int(visible_height * size_ratio) + 2
+			mini_x, mini_y, mini_width, mini_height, line_width = \
+				compute_minimap_rect(
+					image.scroll_x, image.scroll_y, image.zoom_level,
+					image.get_pixbuf_width(), image.get_pixbuf_height(),
+					image.get_widget_width(), image.get_widget_height(),
+					self.mini_pixbuf.get_width(), self.mini_pixbuf.get_height(),
+				)
 
 			# Set up a cairo context
 			mini_context = cairo.Context(self._mini_surface)
 			mini_context.new_path()
-			mini_context.set_line_width(1)
+			mini_context.set_line_width(line_width)
 			mini_context.set_antialias(cairo.Antialias.NONE)
 			mini_context.set_line_cap(cairo.LineCap.SQUARE)
 

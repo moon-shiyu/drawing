@@ -56,6 +56,7 @@ drawing_sources = [
 	'utilities/utilities_colors.py',
 	'utilities/utilities_files.py',
 	'utilities/utilities_overlay.py',
+	'utilities/utilities_minimap.py',
 	'utilities/utilities_paths.py',
 	'utilities/utilities_units.py',
 
