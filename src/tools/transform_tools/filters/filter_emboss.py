@@ -8,6 +8,9 @@ from .utilities_blur import utilities_blur_surface, BlurType, BlurDirection
 class FilterEmboss(AbstractFilter):
 	__gtype_name__ = 'FilterEmboss'
 
+	def get_filter_hint(self):
+		return _("Creates a raised relief effect from edges")
+
 	def do_filter_operation(self, source_pixbuf, operation):
 		surface = Gdk.cairo_surface_create_from_pixbuf(source_pixbuf, 0, None)
 		scale = self._tool.scale_factor()

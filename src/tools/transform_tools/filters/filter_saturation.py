@@ -5,6 +5,10 @@ from .abstract_filter import AbstractFilter
 class FilterSaturation(AbstractFilter):
 	__gtype_name__ = 'FilterSaturation'
 
+	def get_filter_hint(self):
+		return _("Adjusts color intensity (0 % = grayscale)") + \
+		       " — " + _("Saturation: 0–10 000 %")
+
 	def __init__(self, filter_id, filters_tool, *args):
 		super().__init__(filter_id, filters_tool)
 		self._label, self._spinbtn = self._tool.bar.add_spinbtn( \

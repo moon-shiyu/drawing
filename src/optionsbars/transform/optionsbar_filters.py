@@ -65,6 +65,10 @@ class OptionsBarFilters(AbstractOptionsBar):
 	def on_filter_changed(self):
 		self.set_compact(self._is_narrow)
 		self.window.set_window_subtitles()
+		# Update the menu button tooltip with the active filter's description
+		filter_hint = self.filters_tool._all_filters[
+			self.filters_tool._active_filter].get_filter_hint()
+		self.menu_btn.set_tooltip_text(filter_hint)
 		# self.menu_label.set_label(self.filters_tool.type_label) # XXX width???
 
 	def set_compact(self, state):

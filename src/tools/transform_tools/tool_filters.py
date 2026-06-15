@@ -79,7 +79,8 @@ class ToolFilters(AbstractCanvasTool):
 
 	def get_editing_tips(self):
 		tip_label = _("Click on the image to preview the selected filter")
-		return [self.type_label, tip_label]
+		filter_hint = self._all_filters[self._active_filter].get_filter_hint()
+		return [self.type_label, filter_hint, tip_label]
 
 	def on_options_changed(self):
 		self._preview_filter()

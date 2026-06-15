@@ -7,6 +7,10 @@ from .utilities_blur import utilities_blur_surface, BlurType, BlurDirection
 class FilterBlur(AbstractFilter):
 	__gtype_name__ = 'FilterBlur'
 
+	def get_filter_hint(self):
+		return _("Softens the image by averaging nearby pixels") + \
+		       " — " + _("Radius: 1–99 px")
+
 	def __init__(self, filter_id, filters_tool, *args):
 		super().__init__(filter_id, filters_tool)
 		self._blur_direction = BlurDirection.INVALID

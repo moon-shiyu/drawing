@@ -7,6 +7,9 @@ from .abstract_filter import AbstractFilter
 class FilterVeil(AbstractFilter):
 	__gtype_name__ = 'FilterVeil'
 
+	def get_filter_hint(self):
+		return _("Applies full saturation with a pixelated overlay")
+
 	def do_filter_operation(self, source_pixbuf, operation):
 		self._tool.get_image().set_temp_pixbuf(source_pixbuf.copy())
 		temp = self._tool.get_image().temp_pixbuf

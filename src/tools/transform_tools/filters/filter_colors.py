@@ -7,6 +7,9 @@ from .abstract_filter import AbstractFilter
 class FilterColors(AbstractFilter):
 	__gtype_name__ = 'FilterColors'
 
+	def get_filter_hint(self):
+		return _("Inverts all colors to their complementary")
+
 	def __init__(self, filter_id, filters_tool, *args):
 		super().__init__(filter_id, filters_tool)
 

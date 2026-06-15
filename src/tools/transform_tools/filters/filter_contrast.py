@@ -7,6 +7,10 @@ from .abstract_filter import AbstractFilter
 class FilterContrast(AbstractFilter):
 	__gtype_name__ = 'FilterContrast'
 
+	def get_filter_hint(self):
+		return _("Increases contrast using soft-light blending") + \
+		       " — " + _("Strength: 0–100 %")
+
 	def __init__(self, filter_id, filters_tool, *args):
 		super().__init__(filter_id, filters_tool)
 		self._label, self._spinbtn = self._tool.bar.add_spinbtn( \
