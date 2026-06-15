@@ -36,6 +36,12 @@ class OptionsBarFilters(AbstractOptionsBar):
 		self._menu_label = builder.get_object('menu_label')
 		self._menu_icon = builder.get_object('menu_icon')
 
+		# Description label: shows effect summary and parameter range hints
+		self._description_label = Gtk.Label()
+		self._description_label.get_style_context().add_class('dim-label')
+		self._description_label.set_visible(False)
+		self.centered_box.add(self._description_label)
+
 	def add_spinbtn(self, caption, adj_as_array, spin_chars, unit):
 		widget_label = Gtk.Label(label=caption)
 		widget_spinbtn = Gtk.SpinButton(tooltip_text=caption)
@@ -65,12 +71,17 @@ class OptionsBarFilters(AbstractOptionsBar):
 	def on_filter_changed(self):
 		self.set_compact(self._is_narrow)
 		self.window.set_window_subtitles()
-		# self.menu_label.set_label(self.filters_tool.type_label) # XXX width???
+		# Update the description label with the active filter's hint
+		description = self.filters_tool.type_description
+		self._description_label.set_label(description)
+		self._description_label.set_visible(bool(description) and not self._is_narrow)
+		self._description_label.set_tooltip_text(description)
 
 	def set_compact(self, state):
 		super().set_compact(state)
 		self._menu_label.set_visible(not state)
 		self._menu_icon.set_visible(state)
+		self._description_label.set_visible(not state and bool(self.filters_tool.type_description))
 		self.filters_tool.set_filters_compact(state)
 
 	############################################################################

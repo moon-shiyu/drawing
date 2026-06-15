@@ -37,6 +37,7 @@ class ToolFilters(AbstractCanvasTool):
 
 		self.add_tool_action_enum('filters_type', 'saturation')
 		self.type_label = _("Change saturation")
+		self.type_description = _("Adjusts color intensity (0–10000%: 0=grayscale, 100=original)")
 		self._active_filter = 'saturation'
 
 		# Options specific to filters, but which are here for no good reason
@@ -96,41 +97,51 @@ class ToolFilters(AbstractCanvasTool):
 		if state_as_string == 'blur_fast':
 			self.blur_algo = BlurType.CAIRO_REPAINTS
 			self.type_label =  _("Fast blur")
+			self.type_description = _("Fast smoothing effect (radius: 1–99 px)")
 			self._active_filter = 'blur'
 		elif state_as_string == 'blur_slow':
 			self.blur_algo = BlurType.PX_BOX
 			self.type_label = _("Slow blur")
+			self.type_description = _("Precise box blur (radius: 1–99 px)")
 			self._active_filter = 'blur'
 		elif state_as_string == 'tiles':
 			self.blur_algo = BlurType.TILES
 			self.type_label = _("Mosaic")
+			self.type_description = _("Pixelates into mosaic tiles (radius: 1–99 px)")
 			self._active_filter = 'blur'
 
 		elif state_as_string == 'saturation':
 			self.type_label = _("Change saturation")
+			self.type_description = _("Adjusts color intensity (0–10000%: 0=grayscale, 100=original)")
 			self._active_filter = 'saturation'
 		elif state_as_string == 'veil':
 			self.type_label = _("Veil")
+			self.type_description = _("Adds a pixelated veil overlay")
 			self._active_filter = 'veil'
 
 		elif state_as_string == 'contrast':
 			self.type_label = _("Increase contrast")
+			self.type_description = _("Enhances light/dark differences (0–100%)")
 			self._active_filter = 'contrast'
 		# TODO changer la luminosity tant qu'à faire
 		elif state_as_string == 'emboss':
 			# Context: a filter. See "image embossing" on wikipedia
 			self.type_label = _("Emboss")
+			self.type_description = _("Creates a raised relief effect")
 			self._active_filter = 'emboss'
 
 		elif state_as_string == 'invert':
 			self.type_label = _("Invert colors")
+			self.type_description = _("Inverts all color channels")
 			self._active_filter = 'colors'
 
 		elif state_as_string == 'transparency':
 			self.type_label = _("Add transparency")
+			self.type_description = _("Reduces image opacity (0–100%)")
 			self._active_filter = 'transparency'
 		else:
 			self.type_label = _("Select a filter…")
+			self.type_description = ""
 		self.bar.on_filter_changed()
 
 	############################################################################
