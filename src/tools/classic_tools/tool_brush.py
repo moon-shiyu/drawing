@@ -40,6 +40,7 @@ class ToolBrush(AbstractClassicTool):
 
 		self._brush_type = 'simple'
 		self._brush_dir = 'right'
+		self._brush_params_memory = {}
 		self.add_tool_action_enum('brush-type', self._brush_type)
 		self.add_tool_action_enum('brush-dir', self._brush_dir)
 
@@ -51,13 +52,26 @@ class ToolBrush(AbstractClassicTool):
 		return active_brush._get_tips(self._used_pressure, self._brush_dir)
 
 	def on_options_changed(self):
+		old_brush_type = self._brush_type
 		super().on_options_changed()
-		self._brush_type = self.get_option_value('brush-type')
+
+		new_brush_type = self.get_option_value('brush-type')
+		self._brush_type = new_brush_type
 		self._brush_dir = self.get_option_value('brush-dir')
+
+		if old_brush_type != new_brush_type:
+			# Save the current size for the brush we're leaving
+			self._brush_params_memory[old_brush_type] = {
+				'line_width': self.tool_width,
+			}
+			# Restore saved size for the brush we're switching to
+			if new_brush_type in self._brush_params_memory:
+				saved = self._brush_params_memory[new_brush_type]['line_width']
+				self.window.options_manager.set_tool_width(saved)
+				self.tool_width = saved
 
 		enable_direction = self._brush_type == 'calligraphic'
 		self.set_action_sensitivity('brush-dir', enable_direction)
-		# refreshing the rendered operation isn't pertinent
 
 	############################################################################
 
