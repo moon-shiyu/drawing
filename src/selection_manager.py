@@ -160,6 +160,19 @@ class DrSelectionManager():
 		h = self.selection_pixbuf.get_height()
 		return self.selection_x + w / 2, self.selection_y + h / 2
 
+	def get_selection_geometry(self):
+		"""Return (x, y, width, height) of the current selection, or None if
+		there is no active selection."""
+		if not self.is_active or self.selection_pixbuf is None:
+			return None
+		x = int(self.selection_x)
+		y = int(self.selection_y)
+		width = self.selection_pixbuf.get_width()
+		height = self.selection_pixbuf.get_height()
+		if width <= 0 or height <= 0:
+			return None
+		return (x, y, int(width), int(height))
+
 	def point_is_in_selection(self, tested_x, tested_y):
 		"""Returns a boolean if the point whose coordinates are "(tested_x,
 		tested_y)" is in the path defining the selection. If such path doesn't

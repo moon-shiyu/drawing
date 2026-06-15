@@ -19,6 +19,8 @@ class OptionsBarSelection(AbstractOptionsBar):
 		self.options_long_box = builder.get_object('options_long_box')
 		self.options_short_box = builder.get_object('options_short_box')
 
+		self.selection_info_label = builder.get_object('selection_info_label')
+
 		self.minimap_btn = builder.get_object('minimap_btn')
 		self.minimap_label = builder.get_object('minimap_label')
 		self.minimap_arrow = builder.get_object('minimap_arrow')
@@ -28,6 +30,21 @@ class OptionsBarSelection(AbstractOptionsBar):
 
 	def set_minimap_label(self, label):
 		self.minimap_label.set_label(label)
+
+	def update_selection_info(self, x, y, width, height):
+		"""Display the selection geometry in the optionsbar."""
+		x, y = int(x), int(y)
+		width, height = int(width), int(height)
+		# Translators: selection info shown in the bottom bar
+		info = _("X: {x}  Y: {y}  |  {w} × {h}").format(
+			x=x, y=y, w=width, h=height)
+		self.selection_info_label.set_label(info)
+		self.selection_info_label.set_visible(True)
+
+	def clear_selection_info(self):
+		"""Hide the selection geometry label."""
+		self.selection_info_label.set_label("")
+		self.selection_info_label.set_visible(False)
 
 	def middle_click_action(self):
 		self.window.lookup_action('new_tab_selection').activate()

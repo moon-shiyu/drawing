@@ -47,6 +47,33 @@ class AbstractSelectionTool(AbstractAbstractTool):
 	def get_options_label(self):
 		return _("Selection")
 
+	def _get_selection_pane(self):
+		"""Return the selection optionsbar pane, or None."""
+		try:
+			pane = self.window.options_manager.get_active_pane()
+			if hasattr(pane, 'update_selection_info'):
+				return pane
+		except Exception:
+			pass
+		return None
+
+	def _update_selection_info(self):
+		"""Push the current selection geometry to the optionsbar label."""
+		pane = self._get_selection_pane()
+		if pane is None:
+			return
+		geometry = self.get_selection().get_selection_geometry()
+		if geometry is not None:
+			pane.update_selection_info(*geometry)
+		else:
+			pane.clear_selection_info()
+
+	def _clear_selection_info(self):
+		"""Clear the selection geometry display from the optionsbar."""
+		pane = self._get_selection_pane()
+		if pane is not None:
+			pane.clear_selection_info()
+
 	def get_editing_tips(self):
 		if self.selection_is_active():
 			label_tip = _("Drag the selection or right-click on the canvas")
@@ -144,6 +171,14 @@ class AbstractSelectionTool(AbstractAbstractTool):
 		self.local_dx = event_x - self.x_press
 		self.local_dy = event_y - self.y_press
 		self.non_destructive_show_modif()
+		# Show projected position in optionsbar during drag
+		pane = self._get_selection_pane()
+		if pane is not None:
+			geometry = self.get_selection().get_selection_geometry()
+			if geometry is not None:
+				x = geometry[0] + int(self.local_dx)
+				y = geometry[1] + int(self.local_dy)
+				pane.update_selection_info(x, y, geometry[2], geometry[3])
 
 	def on_unclicked_motion_on_area(self, event, surface):
 		x, y = self.get_image().get_event_coords(event)
@@ -401,20 +436,24 @@ class AbstractSelectionTool(AbstractAbstractTool):
 			# de type "clic-droit > couper" ou "clic-droit > supprimer".
 			# On réinitialise le selection_manager.
 			self.get_selection().reset(True)
+			self._clear_selection_info()
 		elif operation['operation_type'] == 'op-import':
 			# Opération instantanée (sans preview), correspondant à une action
 			# de type "clic-droit > importer" ou "clic-droit > coller".
 			# On charge un pixbuf dans le selection_manager.
 			self._op_import(operation)
+			self._update_selection_info()
 		elif operation['operation_type'] == 'op-replace-canvas':
 			# TODO commentaire
 			self._op_replace_canvas(operation)
+			self._clear_selection_info()
 		elif operation['operation_type'] == 'op-define':
 			# Opération instantanée (sans preview), correspondant à une
 			# sélection (rectangulaire ou non) par définition d'un path.
 			# On charge un pixbuf dans le selection_manager.
 			self._op_define(operation)
 			self._op_clean(operation)
+			self._update_selection_info()
 		elif operation['operation_type'] == 'op-drag':
 			# Prévisualisation d'opération, correspondant à la définition d'une
 			# sélection (rectangulaire ou non) par construction d'un path.
@@ -422,6 +461,7 @@ class AbstractSelectionTool(AbstractAbstractTool):
 			self.local_dx = 0
 			self.local_dy = 0
 			self._op_drag(operation)
+			self._update_selection_info()
 		elif operation['operation_type'] == 'op-apply':
 			# Opération instantanée correspondant à l'aperçu de l'op-drag, donc
 			# la définition d'une sélection (rectangulaire ou non) par
@@ -431,6 +471,7 @@ class AbstractSelectionTool(AbstractAbstractTool):
 				return
 			self._op_drag(operation)
 			self._op_apply(operation)
+			self._clear_selection_info()
 
 	############################################################################
 ################################################################################

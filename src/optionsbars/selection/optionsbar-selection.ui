@@ -171,6 +171,18 @@
     </child>
 
     <child>
+      <object class="GtkLabel" id="selection_info_label">
+        <property name="visible">False</property>
+        <property name="label"></property>
+        <property name="selectable">True</property>
+        <style><class name="dim-label"/></style>
+        <attributes>
+          <attribute name="family" value="Monospace"/>
+        </attributes>
+      </object>
+    </child>
+
+    <child>
       <object class="GtkToggleButton" id="minimap_btn">
         <property name="valign">center</property>
         <property name="tooltip-text" translatable="yes">Preview</property>

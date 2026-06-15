@@ -49,6 +49,14 @@ class ToolRectSelect(AbstractSelectionTool):
 			ccontext = self.get_context()
 			thickness = self.get_overlay_thickness()
 			utilities_show_overlay_on_context(ccontext, rect, thickness)
+			# Show preview dimensions in optionsbar while defining
+			x0 = int(min(self.x_press, event_x))
+			y0 = int(min(self.y_press, event_y))
+			w = int(abs(event_x - self.x_press))
+			h = int(abs(event_y - self.y_press))
+			pane = self._get_selection_pane()
+			if pane is not None and w > 0 and h > 0:
+				pane.update_selection_info(x0, y0, w, h)
 
 	def release_define(self, surface, event_x, event_y):
 		self._build_rectangle_path(self.x_press, self.y_press, event_x, event_y)
