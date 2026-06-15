@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="drawing">
+  <menu id="options-menu">
+
+    <section>
+      <attribute name="label">Pinceaux simples</attribute>
+      <item>
+        <attribute name="label">Tracé brut</attribute>
+        <attribute name="action">win.experiment_mode</attribute>
+        <attribute name="target">simple</attribute>
+      </item>
+      <item>
+        <attribute name="label">Lissé (ajout de points)</attribute>
+        <attribute name="action">win.experiment_mode</attribute>
+        <attribute name="target">smooth</attribute>
+      </item>
+    </section>
+    <section>
+      <attribute name="label">Aérographes</attribute>
+      <item>
+        <attribute name="label">Aplats ronds</attribute>
+        <attribute name="action">win.experiment_mode</attribute>
+        <attribute name="target">aero1</attribute>
+      </item>
+      <item>
+        <attribute name="label">Pois en dégradés</attribute>
+        <attribute name="action">win.experiment_mode</attribute>
+        <attribute name="target">aero2</attribute>
+      </item>
+      <item>
+        <attribute name="label">Effaceur contextuel</attribute>
+        <attribute name="action">win.experiment_mode</attribute>
+        <attribute name="target">aero3</attribute>
+      </item>
+    </section>
+    <section>
+      <attribute name="label">Autres</attribute>
+      <item>
+        <attribute name="label">Pinceaux à motif par masque</attribute>
+        <attribute name="action">win.experiment_mode</attribute>
+        <attribute name="target">pattern</attribute>
+      </item>
+      <item>
+        <attribute name="label">Macro HSL en W</attribute>
+        <attribute name="action">win.experiment_mode</attribute>
+        <attribute name="target">macro-w</attribute>
+      </item>
+    </section>
+
+    <section>
+      <attribute name="label">Opérateurs de dessin</attribute>
+      <submenu>
+        <attribute name="label">Opérateurs Porter-Duff</attribute>
+        <section>
+          <item>
+            <attribute name="label">CLEAR</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">CLEAR</attribute>
+          </item>
+          <item>
+            <attribute name="label">SOURCE</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">SOURCE</attribute>
+          </item>
+          <item>
+            <attribute name="label">OVER</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">OVER</attribute>
+          </item>
+          <item>
+            <attribute name="label">ATOP</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">ATOP</attribute>
+          </item>
+        </section>
+        <section>
+          <!-- <item> -->
+          <!--   <attribute name="label">DEST</attribute> -->
+          <!--   <attribute name="action">win.experiment_operator</attribute> -->
+          <!--   <attribute name="target">DEST</attribute> -->
+          <!-- </item> -->
+          <item>
+            <attribute name="label">DEST__OVER</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">DEST_OVER</attribute>
+          </item>
+          <item>
+            <attribute name="label">DEST__OUT</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">DEST_OUT</attribute>
+          </item>
+        </section>
+        <section>
+          <item>
+            <attribute name="label">XOR</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">XOR</attribute>
+          </item>
+          <item>
+            <attribute name="label">ADD</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">ADD</attribute>
+          </item>
+          <item>
+            <attribute name="label">SATURATE</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">SATURATE</attribute>
+          </item>
+        </section>
+        <section>
+          <attribute name="label">Opérateurs non-liés</attribute>
+          <item>
+            <attribute name="label">IN</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">IN</attribute>
+          </item>
+          <item>
+            <attribute name="label">OUT</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">OUT</attribute>
+          </item>
+          <item>
+            <attribute name="label">DEST__IN</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">DEST_IN</attribute>
+          </item>
+          <item>
+            <attribute name="label">DEST__ATOP</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">DEST_ATOP</attribute>
+          </item>
+        </section>
+      </submenu>
+      <submenu>
+        <attribute name="label">Modes de fusion</attribute>
+        <section>
+          <item>
+            <attribute name="label">MULTIPLY (assombrit)</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">MULTIPLY</attribute>
+          </item>
+          <item>
+            <attribute name="label">SCREEN (éclaircit)</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">SCREEN</attribute>
+          </item>
+          <item>
+            <attribute name="label">OVERLAY</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">OVERLAY</attribute>
+          </item>
+        </section>
+        <section>
+          <item>
+            <attribute name="label">DARKEN</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">DARKEN</attribute>
+          </item>
+          <item>
+            <attribute name="label">LIGHTEN</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">LIGHTEN</attribute>
+          </item>
+        </section>
+        <section>
+          <item>
+            <attribute name="label">COLOR__DODGE (éclaircit)</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">COLOR_DODGE</attribute>
+          </item>
+          <item>
+            <attribute name="label">COLOR__BURN (assombrit)</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">COLOR_BURN</attribute>
+          </item>
+          <item>
+            <attribute name="label">HARD__LIGHT</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">HARD_LIGHT</attribute>
+          </item>
+          <item>
+            <attribute name="label">SOFT__LIGHT</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">SOFT_LIGHT</attribute>
+          </item>
+        </section>
+        <section>
+          <item>
+            <attribute name="label">DIFFERENCE</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">DIFFERENCE</attribute>
+          </item>
+          <item>
+            <attribute name="label">EXCLUSION</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">EXCLUSION</attribute>
+          </item>
+        </section>
+        <section>
+          <attribute name="label">Modes non-séparants</attribute>
+          <item>
+            <attribute name="label">HSL__HUE</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">HSL_HUE</attribute>
+          </item>
+          <item>
+            <attribute name="label">HSL__SATURATION</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">HSL_SATURATION</attribute>
+          </item>
+          <item>
+            <attribute name="label">HSL__COLOR</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">HSL_COLOR</attribute>
+          </item>
+          <item>
+            <attribute name="label">HSL__LUMINOSITY</attribute>
+            <attribute name="action">win.experiment_operator</attribute>
+            <attribute name="target">HSL_LUMINOSITY</attribute>
+          </item>
+        </section>
+      </submenu>
+    </section>
+
+  </menu>
+</interface>
+

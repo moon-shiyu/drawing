@@ -1,0 +1,7 @@
+*/tags.*
+/tags.*
+/_*
+/.flatpak*
+*/_*
+/*.deb
+

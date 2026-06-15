@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018-2023 Romain F. T. -->
+<component type="desktop">
+  <id>com.github.maoschanz.drawing</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+    <kudo>UserDocs</kudo>
+  </kudos>
+  <content_rating type="oars-1.1" />
+
+  <name>Drawing</name>
+  <!-- IMPORTANT: the summarized description of the application. -->
+  <!-- https://gitlab.gnome.org/GNOME/Initiatives/-/wikis/App-Metadata -->
+  <summary>Edit screenshots or memes</summary>
+  <!--     123456789 123456789 123456789 12345 -->
+  <description>
+    <!-- IMPORTANT: complete description of the application (1/3) -->
+    <p>
+      This basic image editor can resize, crop, or rotate an image, apply simple
+      filters, insert or censor text, and manipulate a selected portion of the
+      picture (cut/copy/paste/drag/…)
+    </p>
+    <!-- IMPORTANT: complete description of the application (2/3) -->
+    <p>
+      And of course, you can draw! Using tools such as the pencil, the straight
+      line, the curve tool, many shapes, several brushes, and their various
+      colors and options.
+    </p>
+    <!-- IMPORTANT: complete description of the application (3/3) -->
+    <p>Supported file types include PNG, JPEG and BMP.</p>
+  </description>
+
+  <releases>
+    <release version="1.2.0" date="2024-03-23">
+      <description>
+        <p>
+          Version 1.2.0 improves the transformation tools: their previews are
+          now consistently applied when you change the active tool without
+          clicking on "apply".
+        </p>
+        <p>
+          The text tool is more intuitive to use, with distinct areas on the
+          canvas to edit, move and insert the text.
+        </p>
+        <p>
+          A former option of the paint bucket tool, which didn't belong there,
+          has been improved and moved to the eraser tool.
+        </p>
+        <p>
+          Transparency is henceforth correctly preserved when the "skew" tool
+          expands the canvas with a solid color.
+        </p>
+        <p>
+          You can now adjust the position of the canvas when you're cropping it.
+        </p>
+        <p>
+          The option to use a color editor by default has been moved from the
+          main window to the preferences window, and its bug has been fixed.
+        </p>
+      </description>
+    </release>
+
+    <release version="1.0.2" date="2023-02-25">
+      <description>
+        <!-- very generic release notes i use for ALL minor updates, please -->
+        <!-- translate this one! -->
+        <p>
+          Version 1.0.2 features several minor bug fixes, and various new
+          translations.
+        </p>
+        <p>
+          Saving the image should be more reliable, especially when replacing
+          the transparent pixels with a solid color. Pictures are now
+          automatically reloaded from the disk after being saved.
+        </p>
+        <p>
+          The user interface of the "select" tool changed, as well as the
+          keyboard shortcuts to change tab.
+        </p>
+        <p>
+          A small rendering issue when previewing a blur filter has also been
+          fixed.
+        </p>
+      </description>
+    </release>
+
+    <release version="1.0.1" date="2022-04-09">
+      <description>
+        <!-- very generic release notes i use for ALL minor updates, please -->
+        <!-- translate this one! -->
+        <p>
+          Version 1.0.1 features several minor bug fixes, and various new
+          translations.
+        </p>
+        <p>
+          By popular demand, the "highlighter" tool is now enabled by default,
+          and the message dialog to warn you about the release notes is less
+          intrusive.
+        </p>
+        <p>
+          The main improvement in this update is the zoom workflow: since the
+          version 1.0.0 it's possible to zoom in very deep, but the process was
+          very slow, and the view didn't stay well centered around the mouse
+          pointer; and once at 2000%%, scrolling up or down, or left or right,
+          was quite violent.
+          These problems should all have disappeared in this new version!
+        </p>
+        <p>
+          Incorrect command line parsing when using the app outside of a
+          flatpak sandbox has also been fixed.
+        </p>
+        <p>
+          For users on elementary OS, a small issue concerning window resizing
+          has been mended too.
+        </p>
+      </description>
+    </release>
+
+    <release version="1.0.0" date="2022-03-26">
+      <description>
+        <p>
+          Version 1.0.0 improves rendering performance, which is visible when
+          editing large images with a poor CPU.
+        </p>
+        <p>
+          You can now use the new "skew" tool, to tilt an image from a rectangle
+          to a parallelogram. Such a deformation can be applied horizontally or
+          vertically.
+        </p>
+        <p>
+          You can select tools with keyboard accelerators (Alt+letter). This may
+          not work yet with languages using a non-latin alphabet.
+        </p>
+        <p>
+          Zooming very deep is now possible, and the rendering will be very
+          crisp, even at 2000%%.
+        </p>
+        <p>
+          Pressing "ctrl" will display the cursor coordinates in a tooltip. If
+          you do it while using a tool, it may display additional data, for
+          example the dimensions of the shape you're drawing!
+        </p>
+        <p>
+          Pressing "shift", or "alt" when using a tool enables specific options,
+          such as locking the direction for the "line" tool, or changing the
+          filling style of a shape.
+        </p>
+        <p>
+          Using the "scale" tool, you may optionally set the new size as a
+          relative percentage rather than an absolute value in pixels.
+        </p>
+      </description>
+    </release>
+  </releases>
+
+  <!-- developer_name tag deprecated with Appstream 1.0 -->
+  <developer_name translatable="no">Romain F. T.</developer_name>
+  <developer id="io.github.maoschanz">
+    <name translatable="no">Romain F. T.</name>
+  </developer>
+  <update_contact>rrroschan@gmail.com</update_contact>
+  <url type="homepage">https://maoschanz.github.io/drawing</url>
+  <url type="bugtracker">https://github.com/maoschanz/drawing/issues</url>
+  <url type="contribute">https://github.com/maoschanz/drawing/blob/master/CONTRIBUTING.md</url>
+  <url type="translate">https://github.com/maoschanz/drawing/blob/master/CONTRIBUTING.md#translating</url>
+  <url type="vcs-browser">https://github.com/maoschanz/drawing/</url>
+  <url type="donation">https://paypal.me/maoschannz</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">
+        https://raw.githubusercontent.com/maoschanz/drawing/master/docs/screenshots/1.0/gnome_menu.png
+      </image>
+      <!-- Caption of a screenshot, for appstores -->
+      <caption>
+        The window and its primary menu
+      </caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">
+        https://raw.githubusercontent.com/maoschanz/drawing/master/docs/screenshots/1.0/gnome_selection.png
+      </image>
+      <!-- Caption of a screenshot, for appstores -->
+      <caption>
+        The selection and the actions associated with it
+      </caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">
+        https://raw.githubusercontent.com/maoschanz/drawing/master/docs/screenshots/1.0/gnome_tools_preview.png
+      </image>
+      <!-- Caption of a screenshot, for appstores -->
+      <caption>
+        Zooming in various shapes
+      </caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">
+        https://raw.githubusercontent.com/maoschanz/drawing/master/docs/screenshots/1.0/gnome_new.png
+      </image>
+      <!-- Caption of a screenshot, for appstores -->
+      <caption>
+        The "new image" menu opened
+      </caption>
+    </screenshot>
+  </screenshots>
+
+  <translation type="gettext">drawing</translation>
+  <launchable type="desktop-id">com.github.maoschanz.drawing.desktop</launchable>
+  <provides>
+    <binary>drawing</binary>
+  </provides>
+</component>
+

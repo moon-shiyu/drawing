@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="drawing">
+  <menu id="options-menu">
+    <section>
+      <!-- <attribute name="label" translatable="yes">Outline</attribute> -->
+      <item>
+        <attribute name="label" translatable="yes">Solid outline</attribute>
+        <attribute name="action">win.shape_outline</attribute>
+        <attribute name="target">solid</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Dashed outline</attribute>
+        <attribute name="action">win.shape_outline</attribute>
+        <attribute name="target">dashed</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">No outline</attribute>
+        <attribute name="action">win.shape_outline</attribute>
+        <attribute name="target">none</attribute>
+      </item>
+    </section>
+    <section>
+      <attribute name="label" translatable="yes">Filling</attribute>
+      <item>
+        <attribute name="label" translatable="yes">Empty shape</attribute>
+        <attribute name="action">win.shape_filling</attribute>
+        <attribute name="target">empty</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Main color</attribute>
+        <attribute name="action">win.shape_filling</attribute>
+        <attribute name="target">filled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Secondary color</attribute>
+        <attribute name="action">win.shape_filling</attribute>
+        <attribute name="target">secondary</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Horizontal gradient</attribute>
+        <attribute name="action">win.shape_filling</attribute>
+        <attribute name="target">h-gradient</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Vertical gradient</attribute>
+        <attribute name="action">win.shape_filling</attribute>
+        <attribute name="target">v-gradient</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Radial gradient</attribute>
+        <attribute name="action">win.shape_filling</attribute>
+        <attribute name="target">r-gradient</attribute>
+      </item>
+    </section>
+    <section>
+      <attribute name="display-hint">horizontal-buttons</attribute>
+      <item>
+        <attribute name="label" translatable="yes">Rectangle</attribute>
+        <attribute name="action">win.shape_type</attribute>
+        <attribute name="target">rectangle</attribute>
+        <attribute name="verb-icon">tool-rectangle-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Rounded rectangle</attribute>
+        <attribute name="action">win.shape_type</attribute>
+        <attribute name="target">roundedrect</attribute>
+        <attribute name="verb-icon">tool-roundedrect-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Oval</attribute>
+        <attribute name="action">win.shape_type</attribute>
+        <attribute name="target">oval</attribute>
+        <attribute name="verb-icon">tool-oval-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Polygon</attribute>
+        <attribute name="action">win.shape_type</attribute>
+        <attribute name="target">polygon</attribute>
+        <attribute name="verb-icon">tool-polygon-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Free shape</attribute>
+        <attribute name="action">win.shape_type</attribute>
+        <attribute name="target">freeshape</attribute>
+        <attribute name="verb-icon">tool-freeshape-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Circle</attribute>
+        <attribute name="action">win.shape_type</attribute>
+        <attribute name="target">circle</attribute>
+        <attribute name="verb-icon">tool-circle-symbolic</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Antialiasing</attribute>
+        <attribute name="action">win.antialias</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Close shape</attribute>
+        <attribute name="action">win.shape_close</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>
+

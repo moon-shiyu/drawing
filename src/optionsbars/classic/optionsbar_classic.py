@@ -1,0 +1,142 @@
+# Licensed under GPL3 https://github.com/maoschanz/drawing/blob/master/LICENSE
+
+import cairo
+from .abstract_optionsbar import AbstractOptionsBar
+from .optionsbar_color_popover import OptionsBarClassicColorPopover
+from .utilities_units import utilities_add_unit_to_spinbtn
+
+################################################################################
+
+class OptionsBarClassic(AbstractOptionsBar):
+	__gtype_name__ = 'OptionsBarClassic'
+
+	def __init__(self, window):
+		super().__init__()
+		self.window = window
+		builder = self._build_ui('classic/optionsbar-classic.ui')
+
+		self.color_box = builder.get_object('color_box')
+		self.color_menu_btn_r = builder.get_object('color_menu_btn_r')
+		self.color_menu_btn_l = builder.get_object('color_menu_btn_l')
+		self._build_color_buttons(builder)
+
+		window.add_action_enum('cairo_operator', 'over', self._cairo_op_changed)
+		window.add_action_enum('cairo_op_mirror', 'over', self._cairop_mirror)
+		self._cairo_operator_lock = False
+
+		self.options_label = builder.get_object('options_label')
+		self.options_long_box = builder.get_object('options_long_box')
+		self.options_short_box = builder.get_object('options_short_box')
+
+		self.thickness_scalebtn = builder.get_object('thickness_scalebtn')
+		self.thickness_spinbtn = builder.get_object('thickness_spinbtn')
+		last_size = self._get_tool_options().get_int('last-size')
+		self.thickness_spinbtn.set_value(last_size)
+		utilities_add_unit_to_spinbtn(self.thickness_spinbtn, 3, 'px')
+		self.thickness_spinbtn.connect('value-changed', self._on_size_changed)
+
+		self.minimap_btn = builder.get_object('minimap_btn')
+		self.minimap_label = builder.get_object('minimap_label')
+		self.minimap_arrow = builder.get_object('minimap_arrow')
+
+	def _get_tool_options(self):
+		return self.window.options_manager._tools_gsettings
+
+	def update_for_new_tool(self, tool):
+		self.color_box.set_sensitive(tool.use_color)
+		if tool.use_operator:
+			operator = self.window.options_manager.get_value('cairo_operator')
+		else:
+			operator = tool._fallback_operator
+		self._color_r.set_operators_available(tool.use_operator, operator)
+		self._color_l.set_operators_available(tool.use_operator, operator)
+		self.thickness_scalebtn.set_sensitive(tool.use_size)
+		self.thickness_spinbtn.set_sensitive(tool.use_size)
+
+	def get_minimap_btn(self):
+		return self.minimap_btn
+
+	def set_minimap_label(self, label):
+		self.minimap_label.set_label(label)
+
+	def build_options_menu(self, widget, model, label):
+		if widget is not None:
+			self.options_btn.set_popover(widget)
+		elif model is not None:
+			self.options_btn.set_menu_model(model)
+		else:
+			self.options_btn.set_popover(None)
+		self.options_label.set_label(label)
+
+	def init_adaptability(self):
+		super().init_adaptability()
+		temp_limit_size = self.color_box.get_preferred_width()[0] + \
+		          self.thickness_spinbtn.get_preferred_width()[0] + \
+		           self.options_long_box.get_preferred_width()[0] + \
+		                self.minimap_btn.get_preferred_width()[0] + 50
+		# assuming 50px is enough to compensate the length of the label
+		self._set_limit_size(temp_limit_size)
+
+	def set_compact(self, state):
+		super().set_compact(state)
+		self.options_long_box.set_visible(not state)
+		self.options_short_box.set_visible(state)
+		self.thickness_scalebtn.set_visible(state)
+		self.thickness_spinbtn.set_visible(not state)
+		self.minimap_arrow.set_visible(not state)
+
+	############################################################################
+	# Size #####################################################################
+
+	def _on_size_changed(self, *args):
+		self.window.on_tool_options_changed()
+
+	############################################################################
+	# Colors ###################################################################
+
+	def middle_click_action(self):
+		left_color = self._color_l.color_widget.get_rgba()
+		self._color_l.color_widget.set_rgba(self._color_r.color_widget.get_rgba())
+		self._color_r.color_widget.set_rgba(left_color)
+
+	def _build_color_buttons(self, builder):
+		"""Initialize the 2 color-buttons and popovers with the 2 previously
+		memorized RGBA values."""
+		options_manager = self.window.options_manager
+
+		thumbnail_r = builder.get_object('r_btn_image')
+		self._color_r = OptionsBarClassicColorPopover(self.color_menu_btn_r, \
+		                                    thumbnail_r, False, options_manager)
+
+		thumbnail_l = builder.get_object('l_btn_image')
+		self._color_l = OptionsBarClassicColorPopover(self.color_menu_btn_l, \
+		                                     thumbnail_l, True, options_manager)
+
+		show_editor = self.window.gsettings.get_boolean('direct-color-edit')
+		self.set_palette_setting(show_editor)
+
+	def set_palette_setting(self, show_editor):
+		self._color_r.editor_setting_changed(show_editor)
+		self._color_l.editor_setting_changed(show_editor)
+
+	############################################################################
+	# Cairo operators ("color application modes") ##############################
+
+	def _cairo_op_changed(self, *args):
+		"""This action can be used in menus. Is sync'd with `cairo_op_mirror`."""
+		if self.window.options_manager.mirrored_action_callback('cairo_op_mirror', *args):
+			self._update_popovers(args[1].get_string())
+
+	def _cairop_mirror(self, *args):
+		"""This action should NEVER be added to any menu (GtkRadioButtons only).
+		Is sync'd with `cairo_operator`."""
+		if self.window.options_manager.mirroring_action_callback('cairo_operator', *args):
+			self._update_popovers(args[1].get_string())
+
+	def _update_popovers(self, op_as_string):
+		self._color_r.adapt_to_operator(op_as_string)
+		self._color_l.adapt_to_operator(op_as_string)
+
+	############################################################################
+################################################################################
+

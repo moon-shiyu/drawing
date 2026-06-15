@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="drawing">
+
+  <object class="GtkActionBar" id="bottom-pane">
+    <property name="visible">False</property>
+    <property name="expand">True</property>
+
+    <child>
+      <object class="GtkBox" id="import_box">
+        <property name="visible">True</property>
+        <style><class name="linked"/></style>
+        <child>
+          <object class="GtkButton">
+            <property name="action_name">win.import</property>
+            <property name="label" translatable="yes">Import</property>
+            <property name="visible">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="action_name">win.paste</property>
+            <property name="label" translatable="yes">Paste</property>
+            <property name="visible">True</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="clipboard_box">
+        <property name="visible">True</property>
+        <style><class name="linked"/></style>
+        <child>
+          <object class="GtkButton">
+            <property name="action_name">win.selection_delete</property>
+            <property name="tooltip-text" translatable="yes">Delete</property>
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">edit-delete-symbolic</property>
+                <property name="visible">True</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="action_name">win.selection_cut</property>
+            <property name="tooltip-text" translatable="yes">Cut</property>
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">edit-cut-symbolic</property>
+                <property name="visible">True</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="action_name">win.selection_copy</property>
+            <property name="tooltip-text" translatable="yes">Copy</property>
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">edit-copy-symbolic</property>
+                <property name="visible">True</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkMenuButton" id="actions_btn">
+        <property name="visible">True</property>
+        <property name="menu-model">actions-menu-short</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">system-run-symbolic</property>
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">pan-down-symbolic</property>
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="pack-type">end</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkMenuButton" id="actions_btn_long">
+        <property name="visible">True</property>
+        <style><class name="suggested-action"/></style>
+        <property name="menu-model">actions-menu-long</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">system-run-symbolic</property>
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">pan-down-symbolic</property>
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="pack-type">end</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkMenuButton" id="options_btn">
+        <property name="valign">center</property>
+        <property name="visible">True</property>
+        <property name="menu-model">options-menu</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkBox" id="options_long_box">
+                <property name="visible">True</property>
+                <property name="spacing">10</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Selection options</property>
+                    <property name="visible">True</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">pan-down-symbolic</property>
+                    <property name="visible">True</property>
+                  </object>
+                  <packing>
+                    <property name="pack-type">end</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkImage" id="options_short_box">
+                <property name="icon-name">view-more-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Selection options</property>
+                <property name="visible">True</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkToggleButton" id="minimap_btn">
+        <property name="valign">center</property>
+        <property name="tooltip-text" translatable="yes">Preview</property>
+        <property name="visible">True</property>
+        <property name="action-name">win.toggle_preview</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkLabel" id="minimap_label">
+                <property name="label">100%</property>
+                <property name="visible">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkImage" id="minimap_arrow">
+                <property name="icon-name">pan-down-symbolic</property>
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="pack-type">end</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="pack-type">end</property>
+      </packing>
+    </child>
+
+    <child>
+      <object class="GtkButton" id="help_btn">
+        <property name="visible">True</property>
+        <property name="relief">none</property>
+        <property name="tooltip-text" translatable="yes">Help about selection</property>
+        <property name="action-name">app.help_selection</property>
+        <child>
+          <object class="GtkImage">
+            <property name="icon-name">help-faq-symbolic</property>
+            <property name="visible">True</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="pack-type">end</property>
+      </packing>
+    </child>
+
+  </object>
+
+  <!-- ********************************************************************* -->
+
+  <menu id="actions-menu-long">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Select all</attribute>
+        <attribute name="action">win.select_all</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Deselect</attribute>
+        <attribute name="action">win.unselect</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Invert selection</attribute>
+        <attribute name="action">win.selection_invert</attribute>
+        <attribute name="hidden-when">action-missing</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Close selection</attribute>
+        <attribute name="action">win.selection_close</attribute>
+      </item>
+    </section>
+    <section>
+      <attribute name="display-hint">horizontal-buttons</attribute>
+      <item>
+        <attribute name="label" translatable="yes">Import</attribute>
+        <attribute name="action">win.import</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Paste</attribute>
+        <attribute name="action">win.paste</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Define as current image</attribute>
+        <attribute name="action">win.selection-replace-canvas</attribute>
+        <attribute name="hidden-when">action-missing</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Expand image to fit</attribute>
+        <attribute name="action">win.selection-expand-canvas</attribute>
+        <attribute name="hidden-when">action-missing</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Open As New Image</attribute>
+        <attribute name="action">win.new_tab_selection</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Export as…</attribute>
+        <attribute name="action">win.selection_export</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Help about selection</attribute>
+        <attribute name="action">app.help_selection</attribute>
+      </item>
+    </section>
+  </menu>
+
+  <menu id="actions-menu-short">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Select all</attribute>
+        <attribute name="action">win.select_all</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Deselect</attribute>
+        <attribute name="action">win.unselect</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Invert selection</attribute>
+        <attribute name="action">win.selection_invert</attribute>
+        <attribute name="hidden-when">action-missing</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Close selection</attribute>
+        <attribute name="action">win.selection_close</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Define as current image</attribute>
+        <attribute name="action">win.selection-replace-canvas</attribute>
+        <attribute name="hidden-when">action-missing</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Expand image to fit</attribute>
+        <attribute name="action">win.selection-expand-canvas</attribute>
+        <attribute name="hidden-when">action-missing</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Open As New Image</attribute>
+        <attribute name="action">win.new_tab_selection</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Export as…</attribute>
+        <attribute name="action">win.selection_export</attribute>
+      </item>
+    </section>
+  </menu>
+
+  <menu id="options-menu">
+    <section>
+      <attribute name="label" translatable="yes">Replace with…</attribute>
+      <item>
+        <attribute name="label" translatable="yes">Transparency</attribute>
+        <attribute name="action">win.selection-color</attribute>
+        <attribute name="target">alpha</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Default color</attribute>
+        <attribute name="action">win.selection-color</attribute>
+        <attribute name="target">initial</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Secondary color</attribute>
+        <attribute name="action">win.selection-color</attribute>
+        <attribute name="target">secondary</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Extract from this color</attribute>
+        <attribute name="action">win.selection-extract</attribute>
+      </item>
+    </section>
+  </menu>
+
+</interface>
+

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its" type="task" style="task"
+      id="preferences">
+
+  <info>
+    <link type="guide" xref="index#main"/>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <credit type="author">
+      <name its:translate="no">Romain F. T.</name>
+      <email its:translate="no">rrroschan@gmail.com</email>
+    </credit>
+    <desc>Understand and change the app preferences.</desc>
+  </info>
+
+  <title>Preferences</title>
+
+  <p>The preferences dialog is splitted into 3 parts.</p>
+
+  <section id="image">
+    <title>Image</title>
+
+    <p>You can choose the size and color of the default canvas used when
+    creating a new file.</p>
+
+    <p>When a file is saved to the JPEG or the BMP file format, the transparency
+    can't be kept. The application can replace the transparent pixels with
+    something else: it can be white, black, or a checkboard of greys.</p>
+    <p>The option "default color" corresponds to the initial color of the
+    canvas, which is usually the "default color" setting available in the
+    previous section.</p>
+    <p>If the replacement you want depends on the image, it's also possible to
+    open a dialog every time you save an image to one of these file formats: the
+    choices available in that dialog will also be white, black, or a checkboard
+    of greys.</p>
+
+    <media type="image" mime="image/png" width="80%" its:translate="no"
+           src="figures/screenshot_prefs_images.png" />
+
+    <p>You can also set how you want to zoom on the image: explanations about
+    this setting can be found in <link xref="zoom_preview#configuration">this
+    page about zooming</link>.</p>
+  </section>
+
+  <section id="tools">
+    <title>Tools</title>
+
+    <subsection>
+      <title>Appearance</title>
+      <p>You can set whether you prefer normal icons (16 pixels) or large icons
+      (24 pixels).</p>
+
+      <p>Choosing if you want to display the names of the tools next to their
+      icons is possible here, but the <link xref="main_features#main-menu">
+      primary menu</link> of the window already provides this option. You can
+      also press <key>F9</key>.</p>
+    </subsection>
+
+    <media type="image" mime="image/png" width="80%" its:translate="no"
+           src="figures/screenshot_prefs_tools.png" />
+
+    <subsection>
+      <title>Additional tools</title>
+      <p>Among the available tools, a few are optional. You can uncheck the
+      tools you don't need, or check the tools you need: the changes will be
+      applied in the next window you open.</p>
+
+      <note style="tip">
+        <p>If a tool isn't activated by default, it's because it might be less
+        reliable or useful than the enabled ones.</p>
+
+        <p>For example, the <gui style="menuitem">Paint</gui> bucket (which
+        paints an area of contiguous pixels of the same color into a new color),
+        and the <gui style="menuitem">Color selection</gui> (which creates a
+        <link xref="tools_selection">selection</link> from an area of same
+        color), rely on code whose behavior is sometimes unexpected: it might
+        follow the edges of the area but paint the wrong side of them, and at
+        worst it can even get stuck if the edges are too hard to follow, thus
+        crashing before being able to paint!</p>
+
+        <p>On the other hand, the <gui style="menuitem">Brush</gui> works fine,
+        but it has performance issues: if you press "undo" after having used the
+        brush a few times, it'll freeze for a second. If you enable this tool,
+        it's advised to save your image regularly to avoid problems.</p>
+
+        <p>The <gui style="menuitem">Color picker</gui> tool, which picks a color
+        from the pixel you click, is disabled because it's a little redundant with
+        the color picker from <link xref="tools_classic_colors">the color edition
+        menu</link>. The one from the color edition menu can pick an RGB color
+        from any pixel of the display, while the tool is limited to pixels from
+        the image but the colors it picks have a transparency channel (RGBA).</p>
+
+        <p>The <gui style="menuitem">Highlighter</gui> is a little redundant too,
+        since you can do the same with the pencil and <link xref="tools_classic_colors">
+        the adequate color application mode</link>.</p>
+
+        <p>The tool named "<gui style="menuitem">Points</gui>" works fine but
+        it's designed for a pretty specific captioning purpose that may not be
+        useful to everyone.</p>
+      </note>
+
+      <p>See <link xref="tools_classic">this page about tools</link> for more
+      information.</p>
+    </subsection>
+
+    <subsection>
+      <title>Colors</title>
+      <p>The <link xref="tools_classic_colors">color selection menu</link> is a
+      color palette by default, but you can optionally use the full RGBA color
+      editor as the default way to pick a color instead.</p>
+    </subsection>
+  </section>
+
+  <section>
+    <title>Window</title>
+
+    <p>Here you can set the size of the thumbnail preview, but using a bigger
+    preview is not recommended for technical reasons.</p>
+
+    <p>You can also set the color of the background "behind" the canvas.</p>
+
+    <p>The "theme variant" option can force the app to use the dark variant of
+    your current GTK theme.</p>
+
+    <p>Finally, it's possible to choose the layout of the user interface: the
+    "Compact" layout, designed for the GNOME desktop, is well tested. Other
+    options include the "elementary OS" layout, designed for the elementary OS
+    desktop, and the traditional layout, for MATE or Cinnamon desktop.</p>
+
+    <note style="tip">
+      <p>In this context,"symbolic icons" means that the icons are monochrome
+      (black if you use a light theme, or white if you use a dark theme).
+      Otherwise they can be colorful (depending on your theme).</p>
+    </note>
+
+  </section>
+
+</page>
+

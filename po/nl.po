@@ -1,0 +1,2576 @@
+# Dutch translation of "Drawing"
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the drawing package.
+#
+# Heimen Stoffels <vistausss@outlook.com>, 2019, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: drawing\n"
+"Report-Msgid-Bugs-To: github.com/maoschanz/drawing/issues/new/choose\n"
+"POT-Creation-Date: 2023-02-23 23:35+0100\n"
+"PO-Revision-Date: 2023-02-28 13:40+0100\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: data/com.github.maoschanz.drawing.desktop.in
+#: data/com.github.maoschanz.drawing.appdata.xml.in src/deco_manager.py
+#: src/main.py
+msgid "Drawing"
+msgstr "Tekenen"
+
+#: data/com.github.maoschanz.drawing.desktop.in
+msgid "Simple drawing utility"
+msgstr "Eenvoudig tekenprogramma"
+
+#. This is a list of keywords, you can add any keyword that would be useful to
+#. find the app in your language. "Paint" should stay listed in its untranslated
+#. version too, so people looking for a MS Paint equivalent will find the app.
+#. Don't forget the semicolons.
+#: data/com.github.maoschanz.drawing.desktop.in
+msgid "Paint;Sketch;Pencil;"
+msgstr "Paint;Verven;Schetsen;Potlood;"
+
+#: data/com.github.maoschanz.drawing.desktop.in src/ui/app-menus.ui
+#: src/ui/shortcuts.ui src/ui/win-menus.ui src/window.py
+msgid "New Window"
+msgstr "Nieuw venster"
+
+#: data/com.github.maoschanz.drawing.desktop.in src/ui/app-menus.ui
+#: src/ui/headerbar.ui src/ui/headerbar-eos.ui src/ui/toolbar.ui
+#: src/ui/toolbar-symbolic.ui src/ui/window.ui src/ui/win-menus.ui
+msgid "New Image"
+msgstr "Nieuwe afbeelding"
+
+#: data/com.github.maoschanz.drawing.desktop.in
+msgid "Edit Image in Clipboard"
+msgstr "Klembordafbeelding bewerken"
+
+#. IMPORTANT: the summarized description of the application.
+#. https://gitlab.gnome.org/GNOME/Initiatives/-/wikis/App-Metadata
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid "Edit screenshots or memes"
+msgstr "Bewerk schermfoto's en memes"
+
+#. IMPORTANT: complete description of the application (1/3)
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"This basic image editor can resize, crop, or rotate an image, apply simple "
+"filters, insert or censor text, and manipulate a selected portion of the "
+"picture (cut/copy/paste/drag/…)"
+msgstr ""
+"Met deze afbeeldingsbewerker kun je afbeeldingen bijsnijden, draaien, de "
+"grootte aanpassen, filters toepassen, tekst invoegen of censureren en delen "
+"bewerken (knippen/kopiëren/plakken/verplaatsen…)"
+
+#. IMPORTANT: complete description of the application (2/3)
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"And of course, you can draw! Using tools such as the pencil, the straight "
+"line, the curve tool, many shapes, several brushes, and their various colors "
+"and options."
+msgstr ""
+"En, niet te vergeten, tekenen! Dit kan onder meer met het potlood, rechte "
+"lijnen, curven, verschillende vormen en kwasten en verschillende kleuropties."
+
+#. IMPORTANT: complete description of the application (3/3)
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid "Supported file types include PNG, JPEG and BMP."
+msgstr "Ondersteunde bestandstypes: png, jpeg en bmp."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Version 1.2.0 improves the transformation tools: their previews are now "
+"consistently applied when you change the active tool without clicking on "
+"\"apply\"."
+msgstr ""
+"In versie 1.2.0 verbetert zijn de transformatiegereedschappen verbeterd: "
+"voorvertoningen worden voortaan direct getoond bij het kiezen van een ander "
+"gereedschap."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"The text tool is more intuitive to use, with distinct areas on the canvas to "
+"edit, move and insert the text."
+msgstr ""
+"Het tekstgereedschap is eenvoudiger in het gebruik, met duidelijke "
+"canvasgebieden voor invoegen, bewerken en verplaatsen."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"A former option of the paint bucket tool, which didn't belong there, has "
+"been improved and moved to the eraser tool."
+msgstr ""
+"Een voormalige optie van het opvulgereedschap dat daar niet behoorde is "
+"verbeterd en verplaatst naar de gum."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Transparency is henceforth correctly preserved when the \"skew\" tool "
+"expands the canvas with a solid color."
+msgstr ""
+"Doorzichtigheid blijft voortaan behouden na het scheeftrekken van het canvas "
+"met een vaste kleur."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid "You can now adjust the position of the canvas when you're cropping it."
+msgstr ""
+"De positie van het canvas tijdens het bijsnijden kan voortaan worden "
+"gewijzigd."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"The option to use a color editor by default has been moved from the main "
+"window to the preferences window, and its bug has been fixed."
+msgstr ""
+"De optie om standaard de kleurenbewerker te gebruiken is verplaatst van het "
+"hoofdvenster naar de voorkeuren."
+
+#. very generic release notes i use for ALL minor updates, please
+#. translate this one!
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Version 1.0.2 features several minor bug fixes, and various new translations."
+msgstr ""
+"Versie 1.0.2 bevat verschillende kleine foutoplossingen en nieuwe "
+"vertalingen."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Saving the image should be more reliable, especially when replacing the "
+"transparent pixels with a solid color. Pictures are now automatically "
+"reloaded from the disk after being saved."
+msgstr ""
+"Het opslaan van afbeeldingen zou voortaan beter moeten werken, vooral na het "
+"vervangen van doorzichtige pixels door een vaste kleur. Afbeeldingen worden "
+"voortaan automatisch herladen na het opslaan ervan."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"The user interface of the \"select\" tool changed, as well as the keyboard "
+"shortcuts to change tab."
+msgstr ""
+"De vormgeving van het selectiegereedschap is aangepast, evenals de "
+"sneltoetsen om van tabblad te wisselen."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"A small rendering issue when previewing a blur filter has also been fixed."
+msgstr ""
+"Een klein probleem omtrent het voorvertonen van een vervaagfilter is "
+"opgelost."
+
+#. very generic release notes i use for ALL minor updates, please
+#. translate this one!
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Version 1.0.1 features several minor bug fixes, and various new translations."
+msgstr ""
+"Versie 1.0.1 bevat verschillende kleine foutoplossingen en nieuwe "
+"vertalingen."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"By popular demand, the \"highlighter\" tool is now enabled by default, and "
+"the message dialog to warn you about the release notes is less intrusive."
+msgstr ""
+"Op veler verzoek is het markeergereedschap voortaan standaard ingeschakeld. "
+"Verder staat het berichtvenster met het wijzigingslog minder in de weg."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"The main improvement in this update is the zoom workflow: since the version "
+"1.0.0 it's possible to zoom in very deep, but the process was very slow, and "
+"the view didn't stay well centered around the mouse pointer; and once at "
+"2000%%, scrolling up or down, or left or right, was quite violent. These "
+"problems should all have disappeared in this new version!"
+msgstr ""
+"De grootste verbetering in deze update is het zoomen. Sinds versie 1.0.0 was "
+"het mogelijk om héél ver in te zoomen, maar dat ging erg traag en de "
+"weergave bleef niet ‘%s’. Bovendien was het scrollen bij 2000%% zo goed als "
+"onmogelijk. Al deze problemen zouden met ingang van deze versie als sneeuw "
+"voor de zon verdwenen moeten zijn!"
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Incorrect command line parsing when using the app outside of a flatpak "
+"sandbox has also been fixed."
+msgstr ""
+"De onjuiste verwerking van opdrachtregelopties buiten de flatpak-sandbox is "
+"eveneens opgelost."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"For users on elementary OS, a small issue concerning window resizing has "
+"been mended too."
+msgstr ""
+"Gebruikers van elementary OS zouden nu geen probleem meer moeten hebben met "
+"het vergroten/verkleinen van het venster."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Version 1.0.0 improves rendering performance, which is visible when editing "
+"large images with a poor CPU."
+msgstr ""
+"Nieuw in versie 1.0.0: verbeterde weergaveprestaties tijdens het bewerken "
+"van grote afbeeldingen op een langzame cpu."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"You can now use the new \"skew\" tool, to tilt an image from a rectangle to "
+"a parallelogram. Such a deformation can be applied horizontally or "
+"vertically."
+msgstr ""
+"Je kunt nu het nieuwe rechtzetgereedschap gebruiken om schuingemaakte foto's "
+"recht te zetten. Dit kan zowel horizontaal als verticaal."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"You can select tools with keyboard accelerators (Alt+letter). This may not "
+"work yet with languages using a non-latin alphabet."
+msgstr ""
+"Je kunt gereedschap kiezen met Alt+letter. Let op: mogelijk werkt dit nog "
+"niet goed in talen met een niet-Latijns alfabet."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Zooming very deep is now possible, and the rendering will be very crisp, "
+"even at 2000%%."
+msgstr ""
+"Het is voortaan mogelijk om erg diep in te zoomen, en zelfs bij 2000%% "
+"blijft alles haarscherp."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Pressing \"ctrl\" will display the cursor coordinates in a tooltip. If you "
+"do it while using a tool, it may display additional data, for example the "
+"dimensions of the shape you're drawing!"
+msgstr ""
+"Druk op Ctrl om de cursorcoördinaten te tonen in een hulpballon. Als je dit "
+"doet tijdens het gebruik van een stuk gereedschap, dan wordt er tevens "
+"aanvullende informatie getoond, zoals de afmetingen."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Pressing \"shift\", or \"alt\" when using a tool enables specific options, "
+"such as locking the direction for the \"line\" tool, or changing the filling "
+"style of a shape."
+msgstr ""
+"Door op Ctrl, Shift op Alt te drukken bij gebruik van een gereedschap, kun "
+"je verschillende opties instellen, zoals ‘Toevoegen aan selectie’ bij het "
+"selectiegereedschap."
+
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid ""
+"Using the \"scale\" tool, you may optionally set the new size as a relative "
+"percentage rather than an absolute value in pixels."
+msgstr ""
+"Met het vernieuwde schaalgereedschap kun je afmetingen instellen door een "
+"percentage op te geven in plaats van pixelwaardes."
+
+#. Caption of a screenshot, for appstores
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid "The window and its primary menu"
+msgstr "Het venster en hoofdmenu"
+
+#. Caption of a screenshot, for appstores
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid "The selection and the actions associated with it"
+msgstr "De selectie en bijbehorende acties"
+
+#. Caption of a screenshot, for appstores
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid "Zooming in various shapes"
+msgstr "Verschillende soorten zoom"
+
+#. Caption of a screenshot, for appstores
+#: data/com.github.maoschanz.drawing.appdata.xml.in
+msgid "The \"new image\" menu opened"
+msgstr "Het menu ‘Nieuwe afbeelding’"
+
+#: src/ui/app-menus.ui
+msgid "File"
+msgstr "Bestand"
+
+#: src/ui/app-menus.ui src/ui/toolbar.ui src/ui/toolbar-symbolic.ui
+#: src/ui/win-menus.ui
+msgid "Open an image"
+msgstr "Afbeelding openen"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/ui/win-menus.ui
+msgid "New Blank Image"
+msgstr "Nieuw canvas"
+
+#: src/ui/app-menus.ui src/ui/win-menus.ui src/new_image_dialog.py
+msgid "New Image With Custom Size"
+msgstr "Nieuwe afbeelding met aangepaste grootte"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/ui/win-menus.ui
+msgid "New Image From Selection"
+msgstr "Nieuwe afbeelding uit selectie"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/ui/win-menus.ui
+msgid "New Image From Clipboard"
+msgstr "Nieuwe afbeelding van klembord"
+
+#: src/ui/app-menus.ui src/ui/win-menus.ui
+msgid "Reload file"
+msgstr "Bestand opnieuw inlezen"
+
+#: src/ui/app-menus.ui src/ui/win-menus.ui src/properties.py
+msgid "Image properties"
+msgstr "Eigenschappen"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Reset canvas"
+msgstr "Canvas herstellen"
+
+#: src/ui/app-menus.ui src/ui/headerbar.ui src/ui/headerbar-eos.ui
+#: src/ui/shortcuts.ui src/ui/toolbar.ui src/ui/toolbar-symbolic.ui
+#: src/saving_manager.py
+msgid "Save"
+msgstr "Opslaan"
+
+#: src/ui/app-menus.ui src/ui/win-menus.ui
+msgid "Save without transparency"
+msgstr "Opslaan zonder doorzichtigheid"
+
+#. This "feature" is only visible on April Fools' day, and it
+#. will just rickroll the user.
+#: src/ui/app-menus.ui src/ui/win-menus.ui
+msgid "Prepare as NFT…"
+msgstr "NFT aanschaffen…"
+
+#: src/ui/app-menus.ui src/ui/headerbar-eos.ui src/ui/win-menus.ui
+#: src/saving_manager.py
+msgid "Save as…"
+msgstr "Opslaan als…"
+
+#: src/ui/app-menus.ui src/ui/selection-manager.ui src/ui/win-menus.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Export as…"
+msgstr "Exporteren als…"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/ui/toolbar.ui
+#: src/ui/toolbar-symbolic.ui src/ui/win-menus.ui
+msgid "Copy to clipboard"
+msgstr "Kopiëren naar klembord"
+
+#: src/ui/app-menus.ui src/ui/toolbar.ui src/ui/toolbar-symbolic.ui
+#: src/ui/win-menus.ui
+msgid "Print"
+msgstr "Afdrukken"
+
+#: src/ui/app-menus.ui
+msgid "Close Image"
+msgstr "Afbeelding sluiten"
+
+#: src/ui/app-menus.ui
+msgid "Close Window"
+msgstr "Venster sluiten"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Quit all windows"
+msgstr "Alle vensters sluiten"
+
+#: src/ui/app-menus.ui
+msgid "Edit"
+msgstr "Bewerken"
+
+#: src/ui/app-menus.ui src/ui/headerbar.ui src/ui/headerbar-eos.ui
+#: src/ui/shortcuts.ui src/ui/toolbar.ui src/ui/toolbar-symbolic.ui
+#: src/deco_manager.py
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: src/ui/app-menus.ui src/ui/headerbar.ui src/ui/headerbar-eos.ui
+#: src/ui/shortcuts.ui src/ui/toolbar.ui src/ui/toolbar-symbolic.ui
+#: src/deco_manager.py
+msgid "Redo"
+msgstr "Opnieuw"
+
+#: src/ui/app-menus.ui
+msgid "Rebuild from history"
+msgstr "Opnieuw laden uit geschiedenis"
+
+#: src/ui/app-menus.ui src/ui/selection-manager.ui src/ui/shortcuts.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Select all"
+msgstr "Alles selecteren"
+
+#: src/ui/app-menus.ui src/ui/selection-manager.ui src/ui/shortcuts.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Cut"
+msgstr "Knippen"
+
+#: src/ui/app-menus.ui src/ui/selection-manager.ui src/ui/shortcuts.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Copy"
+msgstr "Kopiëren"
+
+#: src/ui/app-menus.ui src/ui/selection-manager.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: src/ui/app-menus.ui src/ui/selection-manager.ui src/ui/shortcuts.ui
+#: src/ui/toolbar.ui src/ui/toolbar-symbolic.ui
+#: src/optionsbars/selection/optionsbar-selection.ui
+msgid "Paste"
+msgstr "Plakken"
+
+#: src/ui/app-menus.ui src/ui/selection-manager.ui src/ui/toolbar.ui
+#: src/ui/toolbar-symbolic.ui src/window.py
+#: src/optionsbars/selection/optionsbar-selection.ui
+msgid "Import"
+msgstr "Importeren"
+
+#: src/ui/app-menus.ui src/ui/preferences.ui src/ui/win-menus.ui
+#: src/preferences.py
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: src/ui/app-menus.ui
+msgid "View"
+msgstr "Beeld"
+
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar-classic.ui
+#: src/optionsbars/selection/optionsbar-selection.ui
+msgid "Preview"
+msgstr "Voorvertoning"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/preferences.py
+msgid "Zoom"
+msgstr "Zoomen"
+
+#: src/ui/app-menus.ui src/ui/minimap.ui src/ui/shortcuts.ui
+msgid "Optimal Zoom"
+msgstr "Optimaal zoomen"
+
+#: src/ui/app-menus.ui src/ui/minimap.ui src/ui/shortcuts.ui src/ui/toolbar.ui
+#: src/ui/toolbar-symbolic.ui src/optionsbars/transform/optionsbar-crop.ui
+#: src/optionsbars/transform/optionsbar-scale.ui
+#: src/optionsbars/transform/optionsbar-skew.ui
+msgid "Zoom Out"
+msgstr "Uitzoomen"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/ui/toolbar.ui
+#: src/ui/toolbar-symbolic.ui src/optionsbars/transform/optionsbar-crop.ui
+#: src/optionsbars/transform/optionsbar-scale.ui
+#: src/optionsbars/transform/optionsbar-skew.ui
+msgid "Original Zoom"
+msgstr "Oorspronkelijk zoomniveau"
+
+#: src/ui/app-menus.ui src/ui/minimap.ui src/ui/shortcuts.ui src/ui/toolbar.ui
+#: src/ui/toolbar-symbolic.ui src/optionsbars/transform/optionsbar-crop.ui
+#: src/optionsbars/transform/optionsbar-scale.ui
+#: src/optionsbars/transform/optionsbar-skew.ui
+msgid "Zoom In"
+msgstr "Inzoomen"
+
+#. Context: this submenu is about moving the view to the
+#. left/right/top/bottom
+#: src/ui/app-menus.ui
+msgid "Position"
+msgstr "Positie"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Go Left"
+msgstr "Ga naar links"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Go Up"
+msgstr "Ga omhoog"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Go Down"
+msgstr "Ga omlaag"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Go Right"
+msgstr "Ga naar rechts"
+
+#. Context: this action scrolls to the left end of the
+#. canvas. The "go left" action only goes a few centimeters
+#. to the left, but this one goes all the way left.
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Go to the left end"
+msgstr "Ga naar het linkeruiteinde"
+
+#. Context: this action scrolls to the top of the canvas
+#. The "go up" action only goes a few centimeters up, but
+#. this one goes all the way to the top.
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Go to the top"
+msgstr "Ga naar de bovenkant"
+
+#. Context: this action scrolls to the bottom of the canvas
+#. The "go down" action only goes a few centimeters down,
+#. but this one goes all the way to the bottom.
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Go to the bottom"
+msgstr "Ga naar de onderkant"
+
+#. Context: this action scrolls to the right end of the
+#. canvas. The "go right" action only goes a few centimeters
+#. to the right, but this one goes all the way right.
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Go to the right end"
+msgstr "Ga naar het rechteruiteinde"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Tab at the left"
+msgstr "Tabblad links"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Tab at the right"
+msgstr "Tabblad rechts"
+
+#: src/ui/app-menus.ui
+msgid "Refresh"
+msgstr "Verversen"
+
+#. Label shown only in developer mode
+#: src/ui/app-menus.ui
+msgid "Track framerate"
+msgstr "Framesnelheid bijhouden"
+
+#: src/ui/app-menus.ui
+msgid "Dark theme variant"
+msgstr "Donker thema gebruiken"
+
+#: src/ui/app-menus.ui
+msgid "Show the menu-bar"
+msgstr "Menubalk tonen"
+
+#: src/ui/app-menus.ui
+msgid "Hide toolbars"
+msgstr "Werkbalken verbergen"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/ui/win-menus.ui
+msgid "Fullscreen"
+msgstr "Beeldvullend"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/preferences.py
+msgid "Colors"
+msgstr "Kleuren"
+
+#: src/ui/app-menus.ui
+msgid "Edit Main Color…"
+msgstr "Hoofdkleur aanpassen…"
+
+#: src/ui/app-menus.ui
+msgid "Edit Secondary Color…"
+msgstr "Alternatieve kleur aanpassen…"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+#: src/optionsbars/classic/optionsbar-classic.ui
+msgid "Exchange colors"
+msgstr "Kleuren omwisselen"
+
+#: src/ui/app-menus.ui
+msgid "Color application mode"
+msgstr "Kleurmodus"
+
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-color-popover.ui
+msgid "Normal"
+msgstr "Normaal"
+
+#. Context: possible ways to apply the color to the canvas
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-operator-menus.ui
+msgid "Highlight"
+msgstr "Accenten"
+
+#. Context: a possible way to highlight text
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar-operator-menus.ui
+#: src/tools/ui/tool-highlight.ui src/tools/classic_tools/tool_highlight.py
+msgid "Dark text on light background"
+msgstr "Donkere tekst op lichte achtergrond"
+
+#. Context: a possible way to highlight text
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar-operator-menus.ui
+#: src/tools/ui/tool-highlight.ui src/tools/classic_tools/tool_highlight.py
+msgid "Light text on dark background"
+msgstr "Lichte tekst op donkere achtergrond"
+
+#. Context: possible ways to apply the color to the canvas, using
+#. only some specific dimension(s) of the selected color in its
+#. hue-saturation-luminosity (HSL) representation
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-operator-menus.ui
+msgid "HSL modes"
+msgstr "HSL-modi"
+
+#. Context: a possible way to apply the color to the canvas
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-operator-menus.ui
+msgid "Hue only"
+msgstr "Alleen tint"
+
+#. Context: a possible way to apply the color to the canvas
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-operator-menus.ui
+msgid "Saturation only"
+msgstr "Alleen verzadiging"
+
+#. Context: a possible way to apply the color to the canvas
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-operator-menus.ui
+msgid "Hue and saturation"
+msgstr "Tint en verzadiging"
+
+#. Context: a possible way to apply the color to the canvas
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-operator-menus.ui
+msgid "Luminosity only"
+msgstr "Alleen helderheid"
+
+#. Context: possible ways to apply the color to the canvas
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-operator-menus.ui
+msgid "Other modes"
+msgstr "Overige modi"
+
+#. Context: a possible way to apply the color to the canvas
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-operator-menus.ui
+msgid "Raw source color"
+msgstr "Bronkleur"
+
+#. Context: a possible way to apply the color to the canvas
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-operator-menus.ui
+msgid "Difference"
+msgstr "Verschil"
+
+#: src/ui/app-menus.ui
+msgid "Don't use the colors but…"
+msgstr "Geen kleuren gebruiken…"
+
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/classic/optionsbar-color-popover.ui
+msgid "Erase"
+msgstr "Wissen"
+
+#: src/ui/app-menus.ui src/ui/preferences.ui src/ui/shortcuts.ui
+msgid "Tools"
+msgstr "Gereedschappen"
+
+#: src/ui/app-menus.ui
+msgid "Previous tool"
+msgstr "Vorig gereedschap"
+
+#: src/ui/app-menus.ui
+msgid "Active tool"
+msgstr "Actief gereedschap"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/ui/win-menus.ui
+#: src/preferences.py
+msgid "Show tools names"
+msgstr "Gereedschapsnamen tonen"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Bigger width"
+msgstr "Breder"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui
+msgid "Smaller width"
+msgstr "Smaller"
+
+#: src/ui/app-menus.ui
+msgid "Troubleshoot selection"
+msgstr "Problemen omtrent selecties oplossen"
+
+#: src/ui/app-menus.ui
+#: src/optionsbars/transform/abstract-optionsbar-transform.ui
+msgid "Cancel transformation"
+msgstr "Transformatie afbreken"
+
+#: src/ui/app-menus.ui
+#: src/optionsbars/transform/abstract-optionsbar-transform.ui
+msgid "Apply transformation"
+msgstr "Transformatie toepassen"
+
+#: src/ui/app-menus.ui
+msgid "Options"
+msgstr "Opties"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/ui/win-menus.ui
+msgid "Help"
+msgstr "Hulp"
+
+#: src/ui/app-menus.ui src/ui/shortcuts.ui src/ui/win-menus.ui
+msgid "Shortcuts"
+msgstr "Sneltoetsen"
+
+#: src/ui/app-menus.ui src/ui/window.ui src/window.py
+msgid "Report a bug"
+msgstr "Meld een fout (bug)"
+
+#. Context: open the index of all help pages
+#: src/ui/app-menus.ui
+msgid "Index"
+msgstr "Index"
+
+#. Context: submenu listing individual help pages
+#: src/ui/app-menus.ui
+msgid "Individual pages"
+msgstr "Individuele pagina's"
+
+#. Context: open the help page about general use of the app
+#: src/ui/app-menus.ui
+msgid "Basic help"
+msgstr "Algemene hulp"
+
+#: src/ui/app-menus.ui src/ui/minimap.ui
+msgid "Help about zooming"
+msgstr "Hulp omtrent zoomen"
+
+#: src/ui/app-menus.ui
+msgid "Help about the full-screen mode"
+msgstr "Hulp omtrent de beeldvullende modus"
+
+#: src/ui/app-menus.ui
+msgid "Help about classic tools"
+msgstr "Hulp omtrent traditionele gereedschappen"
+
+#: src/ui/app-menus.ui src/optionsbars/classic/optionsbar-color-popover.ui
+msgid "Help about colors"
+msgstr "Hulp omtrent kleuren"
+
+#. Context: open the help page about transformation tools (crop,
+#. scale, rotate, filters, ...
+#: src/ui/app-menus.ui
+#: src/optionsbars/transform/abstract-optionsbar-transform.ui
+msgid "Help about transformation tools"
+msgstr "Hulp omtrent transformatiegereedschappen"
+
+#: src/ui/app-menus.ui src/optionsbars/selection/optionsbar-selection.ui
+msgid "Help about selection"
+msgstr "Hulp omtrent selecties"
+
+#: src/ui/app-menus.ui
+msgid "What's new"
+msgstr "Wijzigingslog"
+
+#: src/ui/app-menus.ui src/ui/win-menus.ui
+msgid "About Drawing"
+msgstr "Over Tekenen"
+
+#: src/ui/headerbar.ui src/ui/headerbar-eos.ui src/ui/toolbar.ui
+#: src/ui/toolbar-symbolic.ui src/window.py
+msgid "Open"
+msgstr "Openen"
+
+#: src/ui/headerbar-eos.ui
+msgid "Share the image"
+msgstr "Afbeelding delen"
+
+#: src/ui/image.ui
+msgid "The image changed on the disk, do you want to reload it?"
+msgstr "Het afbeeldingsbestand is gewijzigd. Wil je het opnieuw inlezen?"
+
+#: src/ui/image.ui
+msgid "Reload"
+msgstr "Opnieuw inlezen"
+
+#: src/ui/minimap.ui
+msgid "100%"
+msgstr "100%"
+
+#: src/ui/minimap.ui src/ui/shortcuts.ui
+msgid "Maximum zoom"
+msgstr "Maximaal zoomniveau"
+
+#: src/ui/new-image-dialog.ui src/ui/properties.ui
+#: src/optionsbars/transform/optionsbar-crop.ui
+#: src/optionsbars/transform/optionsbar-scale.ui
+msgid "Width"
+msgstr "Breedte"
+
+#: src/ui/new-image-dialog.ui src/ui/properties.ui
+#: src/optionsbars/transform/optionsbar-crop.ui
+#: src/optionsbars/transform/optionsbar-scale.ui
+msgid "Height"
+msgstr "Hoogte"
+
+#: src/ui/new-image-dialog.ui
+msgid "Color"
+msgstr "Kleur"
+
+#: src/ui/new-image-dialog.ui
+msgid "Use these settings by default"
+msgstr "Instellingen onthouden"
+
+#: src/ui/preferences.ui
+msgid "Images"
+msgstr "Afbeeldingen"
+
+#: src/ui/preferences.ui
+msgid "Window"
+msgstr "Venster"
+
+#. To translators: it's a measure unit, it appears in tooltips over
+#. numerical inputs
+#: src/ui/properties.ui src/utilities/utilities_units.py
+msgid "pixels"
+msgstr "pixels"
+
+#: src/ui/properties.ui
+msgid "centimeters"
+msgstr "centimeter"
+
+#: src/ui/properties.ui
+msgid "inches"
+msgstr "inch"
+
+#: src/ui/selection-manager.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Close selection"
+msgstr "Selectie sluiten"
+
+#: src/ui/selection-manager.ui src/ui/shortcuts.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Deselect"
+msgstr "Niets selecteren"
+
+#: src/ui/selection-manager.ui src/tools/transform_tools/tool_crop.py
+msgid "Crop"
+msgstr "Bijsnijden"
+
+#: src/ui/selection-manager.ui src/tools/transform_tools/tool_scale.py
+msgid "Scale"
+msgstr "Grootte aanpassen"
+
+#: src/ui/selection-manager.ui src/tools/transform_tools/tool_rotate.py
+msgid "Rotate"
+msgstr "Draaien"
+
+#. This is the name of the tool changing rectangles into parallelograms.
+#. It's synonymous with tilt, slant, bend. If you need a reference to
+#. translate it, this is named after MS Paint's "Stretch/Skew" dialog.
+#: src/ui/selection-manager.ui src/preferences.py
+#: src/tools/transform_tools/tool_skew.py
+msgid "Skew"
+msgstr "Scheefheid"
+
+#: src/ui/selection-manager.ui src/tools/transform_tools/tool_filters.py
+msgid "Filters"
+msgstr "Filters"
+
+#: src/ui/selection-manager.ui src/tools/ui/selection.ui
+msgid "More actions"
+msgstr "Meer acties"
+
+#: src/ui/selection-manager.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Invert selection"
+msgstr "Selectie omkeren"
+
+#. Define the image as being the currently selected area
+#: src/ui/selection-manager.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Define as current image"
+msgstr "Instellen als huidige afbeelding"
+
+#. Expand the canvas of the current image to make the current selection fit in it.
+#. Can be translated as "Expand to this size".
+#: src/ui/selection-manager.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Expand image to fit"
+msgstr "Afbeelding inpassen"
+
+#: src/ui/selection-manager.ui
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Open As New Image"
+msgstr "Openen als nieuwe afbeelding"
+
+#: src/ui/shortcuts.ui
+msgid "Keyboard Shortcuts"
+msgstr "Sneltoetsen"
+
+#: src/ui/shortcuts.ui
+msgid "General"
+msgstr "Algemeen"
+
+#: src/ui/shortcuts.ui
+msgid "Main menu"
+msgstr "Hoofdmenu"
+
+#: src/ui/shortcuts.ui
+msgid "Toggle the menu-bar"
+msgstr "Menubalk aan/uit"
+
+#: src/ui/shortcuts.ui
+msgid "Image"
+msgstr "Afbeelding"
+
+#: src/ui/shortcuts.ui src/window.py
+msgid "Open a picture"
+msgstr "Afbeeldingen openen"
+
+#: src/ui/shortcuts.ui
+msgid "Reload image from disk"
+msgstr "Afbeelding opnieuw inlezen"
+
+#: src/ui/shortcuts.ui src/saving_manager.py
+msgid "Save picture as…"
+msgstr "Afbeelding opslaan als…"
+
+#: src/ui/shortcuts.ui
+msgid "Close the active image"
+msgstr "Huidige afbeelding sluiten"
+
+#: src/ui/shortcuts.ui
+msgid "Open the tool options menu"
+msgstr "Gereedschapsoptiemenu openen"
+
+#: src/ui/shortcuts.ui
+msgid "Back to previous tool"
+msgstr "Terug naar vorig gereedschap"
+
+#: src/ui/shortcuts.ui
+msgid "Apply a transformation"
+msgstr "Transformatie toepassen"
+
+#: src/ui/shortcuts.ui
+msgid "Toggle the preview"
+msgstr "Voorvertoning aan/uit"
+
+#: src/ui/shortcuts.ui src/tools/selection_tools/abstract_select.py
+msgid "Selection"
+msgstr "Selectie"
+
+#. Label displayed in the keyboard shortcuts dialog
+#: src/ui/shortcuts.ui
+msgid "Delete the selection"
+msgstr "Selectie verwijderen"
+
+#. Label displayed in the keyboard shortcuts dialog
+#: src/ui/shortcuts.ui
+msgid "Import a file as the selection"
+msgstr "Importeer een bestand als selectie"
+
+#. Label displayed in the keyboard shortcuts dialog
+#: src/ui/shortcuts.ui
+msgid "Edit the main color (left click)"
+msgstr "Hoofdkleur bewerken (linkermuisknop)"
+
+#. Label displayed in the keyboard shortcuts dialog
+#: src/ui/shortcuts.ui
+msgid "Edit the secondary color (right click)"
+msgstr "Alternatieve kleur bewerken (rechtermuisknop)"
+
+#: src/ui/shortcuts.ui
+msgid "History"
+msgstr "Geschiedenis"
+
+#. Context: this section of the shortcuts window is about moving
+#. the view to the left/right/top/bottom
+#: src/ui/shortcuts.ui
+msgid "Navigation"
+msgstr "Navigatie"
+
+#: src/ui/shortcuts.ui
+msgid "Tabs"
+msgstr "Tabbladen"
+
+#: src/ui/shortcuts.ui
+msgid "Toggle fullscreen mode"
+msgstr "Beeldvullende modus aan/uit"
+
+#: src/ui/shortcuts.ui
+msgid "Toggle toolbars visibility"
+msgstr "Werkbalken tonen/verbergen"
+
+#: src/ui/shortcuts.ui
+msgid "Touch gestures"
+msgstr "Aanraakgebaren"
+
+#: src/ui/window.ui src/deco_manager.py
+msgid "Loading…"
+msgstr "Bezig met laden…"
+
+#: src/ui/window.ui
+msgid "Exit fullscreen"
+msgstr "Beeldvullende modus verlaten"
+
+#: src/ui/win-menus.ui
+msgid "What's new in Drawing"
+msgstr "Wijzigingslog"
+
+#: src/ui/win-menus.ui
+msgid "Dismiss"
+msgstr "Negeren"
+
+#: src/deco_manager.py
+#, python-format
+msgid "Undo %s"
+msgstr "%s ongedaan maken"
+
+#: src/deco_manager.py
+#, python-format
+msgid "Redo %s"
+msgstr "%s opnieuw toepassen"
+
+#. Context: an error message
+#: src/history_manager.py
+msgid "Attempt to save an invalid state"
+msgstr "Er werd getracht een ongeldige staat op te slaan"
+
+#: src/history_manager.py
+#, python-format
+msgid "Error: no tool '%s'"
+msgstr "Er is geen gereedschap genaamd \"%s\""
+
+#. Context: an error message
+#: src/image.py
+#, python-format
+msgid "New pixbuf empty, no change applied to %s"
+msgstr "De nieuwe pixbuf is leeg - er is niks toegepast op %s"
+
+#: src/image.py src/properties.py
+msgid "Unsaved file"
+msgstr "Niet-opgeslagen bestand"
+
+#. Context: this is a debug information that users will never see
+#: src/image.py
+#, python-format
+msgid "%s frames per second"
+msgstr "%s frames per seconde"
+
+#. Description of a command line option
+#: src/main.py
+msgid "Show the app version"
+msgstr "Toepassingsversie tonen"
+
+#. Description of a command line option
+#: src/main.py
+msgid "Open a new window"
+msgstr "Nieuw venster openen"
+
+#. Description of a command line option
+#: src/main.py
+msgid "Open a new tab"
+msgstr "Nieuw tabblad openen"
+
+#. Description of a command line option
+#: src/main.py
+msgid "Edit the clipboard content"
+msgstr "Klembordinhoud bewerken"
+
+#: src/main.py
+msgid "This version isn't stable!"
+msgstr "Deze versie is instabiel!"
+
+#: src/main.py
+msgid "Report bugs or ideas"
+msgstr "Meld bugs of deel ideëen"
+
+#. To tranlators: "translate" this by a list of your names (one name
+#. per line), they will be displayed in the "about" dialog
+#: src/main.py
+msgid "translator-credits"
+msgstr "Heimen Stoffels <vistausss@fastmail.com>"
+
+#. To translators: this is credits for the icons, consider that "Art
+#. Libre" is proper name
+#: src/main.py
+msgid "GNOME's \"Art Libre\" icon set authors"
+msgstr "De makers van GNOME's ‘Art Libre’-pictogramset"
+
+#: src/main.py
+msgid "Simple image editor for Linux"
+msgstr "Een eenvoudige afbeeldingsbewerker voor Linux"
+
+#: src/main.py
+msgid "Official webpage"
+msgstr "Officiële website"
+
+#: src/main.py
+msgid "Error opening this file."
+msgstr "Dit bestand kan niet worden geopend."
+
+#. This is an error message, %s is a better command suggestion
+#: src/main.py
+#, python-format
+msgid "Did you mean %s ?"
+msgstr "Bedoelde je ‘%s’?"
+
+#. This string displays the zoom level: %s will be replaced with a
+#. number, while %% will be rendered as the symbol '%'
+#: src/minimap.py
+#, python-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: src/new_image_dialog.py src/saving_manager.py src/window.py
+#: src/utilities/utilities_paths.py src/tools/ui/tool-text.ui
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. Context: Create a new image
+#: src/new_image_dialog.py
+msgid "Create"
+msgstr "Maken"
+
+#. Context: title of a section of the preferences
+#: src/preferences.py
+msgid "New images"
+msgstr "Nieuwe afbeeldingen"
+
+#: src/preferences.py
+msgid "Default width"
+msgstr "Standaardbreedte"
+
+#: src/preferences.py
+msgid "Default height"
+msgstr "Standaardhoogte"
+
+#. Context: this is the label that describes the initial color of an
+#. image (as set in the preferences or in the "new image with custom
+#. size" dialog). This is displayed in the context of editing or saving
+#. the image, but not when creating it.
+#: src/preferences.py src/saving_manager.py
+#: src/optionsbars/selection/optionsbar-selection.ui
+#: src/optionsbars/transform/optionsbar-crop.ui
+#: src/optionsbars/transform/optionsbar-skew.ui src/tools/ui/selection.ui
+#: src/tools/ui/tool-crop.ui src/tools/ui/tool-eraser.ui
+#: src/tools/classic_tools/erasers/eraser_area.py
+#: src/tools/classic_tools/erasers/eraser_rubber.py
+msgid "Default color"
+msgstr "Standaardkleur"
+
+#. Context: title of a section of the preferences
+#: src/preferences.py
+msgid "Images saving"
+msgstr "Afbeeldingen opslaan"
+
+#: src/preferences.py
+msgid "JPEG and BMP images can't handle transparency."
+msgstr "JPEG- en BMP-afbeeldingen kunnen niet omgaan met doorzichtigheid."
+
+#: src/preferences.py
+msgid ""
+"If you save your images in these formats, what do want to use to replace "
+"transparent pixels?"
+msgstr ""
+"Als je afbeeldingen opslaat in deze formaten, wat wil je dan gebruiken om "
+"doorzichtige pixels te vervangen?"
+
+#: src/preferences.py src/saving_manager.py src/utilities/utilities_colors.py
+msgid "White"
+msgstr "Wit"
+
+#: src/preferences.py src/saving_manager.py src/utilities/utilities_colors.py
+msgid "Black"
+msgstr "Zwart"
+
+#. Context: replace transparent pixels with [checkboard]. This is a
+#. pattern of dark and light greys.
+#: src/preferences.py src/saving_manager.py
+msgid "Checkboard"
+msgstr "Schaakbord"
+
+#. Context: replace transparent pixels with [nothing]. In practice it
+#. means the alpha channel is just removed.
+#: src/preferences.py src/saving_manager.py
+msgid "Nothing"
+msgstr "Niets"
+
+#: src/preferences.py
+msgid "Ask before saving"
+msgstr "Vragen alvorens op te slaan"
+
+#: src/preferences.py
+msgid "You can zoom with Ctrl+scrolling, or only scrolling."
+msgstr "Je kunt in-/uitzoomen met Ctrl+scrollen of alleen door te scrollen."
+
+#: src/preferences.py
+msgid "See the user help manual for explanations."
+msgstr "Neem voor meer informatie de handleiding door."
+
+#: src/preferences.py
+msgid "Use 'Ctrl' to zoom"
+msgstr "Ctrl gebruiken om in/uit te zoomen"
+
+#. Context: title of a section of the preferences (appearance of the
+#. tools: big icons?, labels?)
+#: src/preferences.py
+msgid "Appearance"
+msgstr "Vormgeving"
+
+#: src/preferences.py
+msgid "Use big icons"
+msgstr "Grote pictogrammen tonen"
+
+#. Context: title of a section of the preferences
+#: src/preferences.py
+msgid "Additional tools"
+msgstr "Extra gereedschappen"
+
+#: src/preferences.py
+msgid ""
+"These tools are not as reliable and useful as they should be, so they are "
+"not all enabled by default."
+msgstr ""
+"Deze gereedschappen zijn niet zo handig en betrouwbaar als zou moeten, dus "
+"zijn ze niet allemaal ingeschakeld."
+
+#. Context: this is the name of a tool
+#: src/preferences.py src/tools/classic_tools/tool_eraser.py
+msgid "Eraser"
+msgstr "Gum"
+
+#. Context: this is the name of a tool, a thick pencil dedicated to
+#. highlight text, for example in screenshots
+#: src/preferences.py src/tools/classic_tools/tool_highlight.py
+msgid "Highlighter"
+msgstr "Markeerstift"
+
+#: src/preferences.py src/tools/classic_tools/tool_brush.py
+#: src/tools/classic_tools/brushes/abstract_brush.py
+msgid "Brush"
+msgstr "Kwast"
+
+#. Context: this is the name of a tool to draw little circles, crosses,
+#. or squares at precise points of the image, for example to draw a vague
+#. graph, or to highlight something in an image.
+#. A number can be added on the cross/circle/square to help captioning
+#. the elements of an image.
+#: src/preferences.py src/tools/classic_tools/tool_points.py
+msgid "Points"
+msgstr "Punten"
+
+#. Context: this is a tool to select an area according to a shape that
+#. can be freely defined by the user.
+#: src/preferences.py src/tools/selection_tools/select_free.py
+msgid "Free selection"
+msgstr "Vrije selectie"
+
+#. Context: this is a tool to "magically" select an area depending on its
+#. color. For example clicking on a white pixel will select the
+#. surrounding area made of white pixels.
+#: src/preferences.py src/tools/selection_tools/select_color.py
+msgid "Color selection"
+msgstr "Kleurselectie"
+
+#. Context: this is a tool to pick a RGBA color in the image in order to
+#. use it to draw with other tools
+#: src/preferences.py src/tools/classic_tools/tool_picker.py
+msgid "Color Picker"
+msgstr "Kleurkiezer"
+
+#. Context: the name of a tool to fill an area of one color with an other
+#: src/preferences.py src/tools/classic_tools/tool_paint.py
+msgid "Paint"
+msgstr "Kwast"
+
+#. Context: the color editor is an interface to pick any RGBA color, and
+#. it can be used instead of the default simple RGB palette
+#: src/preferences.py
+msgid "Use color editor by default"
+msgstr "Gebruik standaard de kleurbewerker"
+
+#: src/preferences.py
+msgid "You can use a simple color palette, or use a full RGBA color editor."
+msgstr ""
+"Je kunt een eenvoudig kleurenpalet of volledige rgba-kleurenbewerker "
+"gebruiken."
+
+#. Context: title of a section of the preferences
+#: src/preferences.py
+msgid "Advanced options"
+msgstr "Geavanceerde opties"
+
+#: src/preferences.py
+msgid "Preview size"
+msgstr "Voorvertoningsgrootte"
+
+#. This label will not be displayed in the UI of stable versions
+#: src/preferences.py
+msgid "Development features"
+msgstr "Experimentele functies"
+
+#: src/preferences.py
+msgid "Background color"
+msgstr "Achtergrondkleur"
+
+#: src/preferences.py
+msgid "Prefer dark theme variant"
+msgstr "Donker thema gebruiken"
+
+#. Context: title of a section of the preferences. It corresponds to the
+#. window layout (header-bar? tool-bar? menu-bar?)
+#: src/preferences.py
+msgid "Layout"
+msgstr "Indeling"
+
+#: src/preferences.py
+msgid "The recommended value is \"Automatic\"."
+msgstr "De aanbevolen instelling is ‘Automatisch’."
+
+#. It has to match what's written in the previous string.
+#: src/preferences.py
+msgid "Automatic"
+msgstr "Automatisch"
+
+#: src/preferences.py
+msgid "Compact"
+msgstr "Compact"
+
+#: src/preferences.py
+msgid "elementary OS"
+msgstr "elementary OS"
+
+#. "Legacy" is about the window layout, it means menubar+toolbar, you
+#. can translate it like if it was "Traditional"
+#: src/preferences.py
+msgid "Legacy"
+msgstr "Klassiek"
+
+#. "Legacy" is about the window layout, it means menubar+toolbar, you
+#. can translate it like if it was "Traditional".
+#. Symbolic icons are monochrome icons.
+#: src/preferences.py
+msgid "Legacy (symbolic icons)"
+msgstr "Klassiek (symbolische pictogrammen)"
+
+#: src/preferences.py
+msgid "Menubar only"
+msgstr "Alleen menubalk"
+
+#: src/preferences.py
+msgid "Toolbar only"
+msgstr "Alleen werkbalk"
+
+#. Symbolic icons are monochrome icons.
+#: src/preferences.py
+msgid "Toolbar only (symbolic icons)"
+msgstr "Werkbalk (symbolische pictogrammen)"
+
+#: src/properties.py
+#, python-format
+msgid "%s px"
+msgstr "%s px"
+
+#: src/properties.py
+#, python-format
+msgid "%s cm"
+msgstr "%s cm"
+
+#: src/properties.py
+#, python-format
+msgid "%s in"
+msgstr "%s in"
+
+#. Context: the path of the edited file
+#: src/properties.py
+msgid "Path"
+msgstr "Pad"
+
+#. Context: the file format of the edited file
+#: src/properties.py
+msgid "Format"
+msgstr "Formaat"
+
+#: src/properties.py
+msgid "Colorspace"
+msgstr "Kleurruimte"
+
+#. Context: an invalid colorspace format
+#: src/properties.py
+msgid "Invalid format"
+msgstr "Ongeldig formaat"
+
+#. an actual error occurred!
+#. Context: an error message
+#: src/saving_manager.py
+msgid "Failed to replace transparency"
+msgstr "De doorzichtigheid kan niet worden vervangen"
+
+#. Context: an error message
+#: src/saving_manager.py
+#, python-format
+msgid "Failed to save %s"
+msgstr "‘%s’ kan niet worden opgeslagen"
+
+#. Context: an error message
+#: src/saving_manager.py
+#, python-format
+msgid "Failed to reload %s"
+msgstr "‘%s’ kan niet worden herladen"
+
+#. Context: Untitled(.png) is the default name of a newly saved file
+#: src/saving_manager.py
+msgid "Untitled"
+msgstr "Naamloos"
+
+#. Context: the sentence "There are unsaved modifications to %s."
+#: src/saving_manager.py
+msgid "this picture"
+msgstr "deze afbeelding"
+
+#: src/saving_manager.py
+msgid "Discard"
+msgstr "Verwerpen"
+
+#. Context: %s will be replaced by the name of a file.
+#: src/saving_manager.py src/window.py
+#, python-format
+msgid "There are unsaved modifications to %s."
+msgstr "‘%s’ bevat niet-opgeslagen aanpassingen."
+
+#: src/saving_manager.py
+msgid ""
+"A part of the image is selected: the pixels beneath the selection will be "
+"saved with a color you might not expect!"
+msgstr ""
+"Er is een deel van de afbeelding geselecteerd - de onderliggende pixels "
+"worden opgeslagen met een voor jou onverwachte kleur!"
+
+#. Context: the user tries to save the image while previewing an
+#. unapplied "transform" operation (scaling, cropping, whatever)
+#: src/saving_manager.py
+msgid "Modifications from the current tool haven't been applied."
+msgstr "De aangebrachte bewerkingen zijn nog niet toegepast."
+
+#. To translators: this string should be quite short
+#: src/saving_manager.py
+msgid "Apply & save"
+msgstr "Toepassen en opslaan"
+
+#. To translators: this string should be quite short
+#: src/saving_manager.py
+msgid "Deselect & save"
+msgstr "Deselecteren en opslaan"
+
+#: src/saving_manager.py
+msgid "Save anyway"
+msgstr "Tóch opslaan"
+
+#: src/saving_manager.py
+msgid "Do you want to save anyway?"
+msgstr "Wil je het bestand tóch opslaan?"
+
+#. Context: confirm replacing transparent pixels with the selected color
+#: src/saving_manager.py
+msgid "Replace"
+msgstr "Vervangen"
+
+#: src/saving_manager.py
+msgid "This file format doesn't support transparent colors."
+msgstr ""
+"Dit bestandsformaat heeft geen ondersteuning voor doorzichtige kleuren."
+
+#: src/saving_manager.py
+msgid "You can save the image as a PNG file, or replace transparency with:"
+msgstr ""
+"Je kunt de afbeelding opslaan als png-bestand of de doorzichtigheid "
+"vervangen door:"
+
+#: src/saving_manager.py
+msgid "Replace transparency with:"
+msgstr "Doorzichtigheid vervangen door:"
+
+#. Context: an error message
+#: src/selection_manager.py
+msgid "The selection pixbuf is empty."
+msgstr "De selectie-pixbuf is blanco."
+
+#: src/selection_manager.py
+msgid "The selection path is empty."
+msgstr "Het selectiepad is leeg."
+
+#. Context: an error message
+#: src/tools_initializer.py
+#, python-format
+msgid "Failed to load tool: %s"
+msgstr "‘%s’ kan niet worden geladen"
+
+#: src/window.py
+msgid "Error starting the application, please report this bug."
+msgstr "Kan de toepassing niet starten - meld deze fout aan de ontwikkelaar."
+
+#: src/window.py
+msgid "The clipboard doesn't contain any image."
+msgstr "Het klembord bevat geen afbeelding."
+
+#. Context: %s is a file name
+#: src/window.py
+#, python-format
+msgid "The file %s is already opened"
+msgstr "‘%s’ is al geopend"
+
+#. Context: the user would click here to confirm they want to open the
+#. same file twice
+#: src/window.py
+msgid "Open again"
+msgstr "Opnieuw openen"
+
+#: src/window.py
+msgid "Switch to this image"
+msgstr "Ga naar deze afbeelding"
+
+#: src/window.py
+msgid "Modifications will take effect in the next new window."
+msgstr "Herstart om de wijzigingen toe te passen."
+
+#: src/window.py
+msgid "Middle-click or press F8 to show/hide controls."
+msgstr ""
+"Druk op de middelste muisknop of F8 om de bediening te tonen/verbergen."
+
+#: src/window.py
+msgid "Press F11 to exit fullscreen."
+msgstr "Druk op F11 om de beeldvullende modus te verlaten."
+
+#: src/window.py
+#, python-format
+msgid ""
+"Error loading the bottom pane for the tool '%s', please report this bug."
+msgstr ""
+"Fout: het paneel van ‘%s’ kan niet worden geladen. Meld deze fout aan de "
+"ontwikkelaar."
+
+#: src/window.py
+#, python-format
+msgid "Loading %s"
+msgstr "Bezig met laden van %s"
+
+#: src/window.py
+msgid "New Tab"
+msgstr "Nieuw tabblad"
+
+#: src/window.py
+msgid "Discard changes"
+msgstr "Wijzigingen verwerpen"
+
+#. Context: %s will be replaced by the name of a file.
+#: src/window.py
+#, python-format
+msgid "Where do you want to open %s?"
+msgstr "Waar wil je %s openen?"
+
+#. Context for translation:
+#. "What do you want to do with *these files*?"
+#: src/window.py
+msgid "these files"
+msgstr "deze bestanden"
+
+#. Context: %s will be replaced by the name of a file. The possible
+#. answers are "cancel", "open", and "import"
+#: src/window.py
+#, python-format
+msgid "What do you want to do with %s?"
+msgstr "Wat wil je doen met ‘%s’?"
+
+#: src/window.py
+msgid "Image copied to clipboard"
+msgstr "De afbeelding is gekopieerd naar het klembord"
+
+#: src/window.py
+msgid "Import a picture"
+msgstr "Afbeelding importeren"
+
+#: src/window.py
+msgid "Required tool is not available"
+msgstr "Het vereiste gereedschap is niet beschikbaar"
+
+#: src/utilities/utilities_colors.py
+msgid "Transparent"
+msgstr "Doorzichtig"
+
+#: src/utilities/utilities_colors.py
+#, python-format
+msgid "%s%% transparent"
+msgstr "%s%% doorzichtig"
+
+#: src/utilities/utilities_colors.py
+msgid "Grey"
+msgstr "Grijs"
+
+#: src/utilities/utilities_colors.py
+msgid "Orange"
+msgstr "Oranje"
+
+#: src/utilities/utilities_colors.py
+msgid "Brown"
+msgstr "Bruin"
+
+#. Context: the name of the current color is provided as a tooltip to
+#. help users with color blindness, but some color names don't have a
+#. clear definition. Here, the app thinks it's probably brown.
+#: src/utilities/utilities_colors.py
+msgid "Probably brown"
+msgstr "Waarschijnlijk bruin"
+
+#: src/utilities/utilities_colors.py
+msgid "Red"
+msgstr "Rood"
+
+#: src/utilities/utilities_colors.py
+msgid "Green"
+msgstr "Groen"
+
+#: src/utilities/utilities_colors.py
+msgid "Blue"
+msgstr "Blauw"
+
+#: src/utilities/utilities_colors.py
+msgid "Yellow"
+msgstr "Geel"
+
+#: src/utilities/utilities_colors.py
+msgid "Magenta"
+msgstr "Magenta"
+
+#: src/utilities/utilities_colors.py
+msgid "Purple"
+msgstr "Paars"
+
+#: src/utilities/utilities_colors.py
+msgid "Cyan"
+msgstr "Groenblauw"
+
+#. Context: the name of the current color is provided as a tooltip to
+#. help users with color blindness, but some color names don't have a
+#. clear definition. Here, the app thinks it's probably teal.
+#. You can translate "teal" with the name of approaching color, like
+#. turquoise or green-blue.
+#: src/utilities/utilities_colors.py
+msgid "Probably teal"
+msgstr "Waarschijnlijk turkoois"
+
+#. Context: the name of the current color is provided as a tooltip to
+#. help users with color blindness, but some color names don't have a
+#. clear definition. Here, the app can't find a corresponding color name.
+#: src/utilities/utilities_colors.py
+msgid "Unknown color name"
+msgstr "Onbekende kleurnaam"
+
+#: src/utilities/utilities_files.py
+msgid "All pictures"
+msgstr "Alle afbeeldingen"
+
+#: src/utilities/utilities_files.py
+msgid "PNG images"
+msgstr "PNG-afbeeldingen"
+
+#: src/utilities/utilities_files.py
+msgid "JPEG images"
+msgstr "JPEG-afbeeldingen"
+
+#: src/utilities/utilities_files.py
+msgid "BMP images"
+msgstr "BMP-afbeeldingen"
+
+#: src/utilities/utilities_files.py
+#, python-format
+msgid "%s isn't an image."
+msgstr "‘%s’ is geen afbeelding."
+
+#: src/utilities/utilities_files.py
+msgid "Sorry, WEBP images can't be loaded by this app."
+msgstr "Tekenen heeft geen ondersteuning voor webp-afbeeldingen."
+
+#. Context: an error message, %s is a file path
+#: src/utilities/utilities_files.py
+#, python-format
+msgid "Despite its name, %s is a WEBP file."
+msgstr "Ondanks de naam is ‘%s’ toch echt een webp-bestand."
+
+#: src/utilities/utilities_paths.py
+msgid "Continue"
+msgstr "Doorgaan"
+
+#: src/utilities/utilities_paths.py
+msgid "The area seems poorly delimited, or is very complex."
+msgstr "Het gebied lijkt slecht afgemeten of is té complex."
+
+#: src/utilities/utilities_paths.py
+msgid "This algorithm may not be able to manage the wanted area."
+msgstr "Dit algoritme kan het gekozen gebied mogelijk niet beheren."
+
+#: src/utilities/utilities_paths.py
+msgid "Do you want to abort the operation, or to let the tool struggle ?"
+msgstr ""
+"Wil je de handeling afbreken of het gereedschap tevergeefs laten doorgaan?"
+
+#. To translators: it appears in tooltips over numerical inputs
+#: src/utilities/utilities_units.py
+msgid "percents"
+msgstr "procent"
+
+#. To translators: it's the angle measure unit, it appears in a tooltip
+#. over a numerical input
+#: src/utilities/utilities_units.py
+msgid "degrees"
+msgstr "graden"
+
+#. Context: this is equivalent to "Highlight: Light text on dark background"
+#. but it has to be FAR SHORTER so it fits in the color chooser
+#: src/optionsbars/classic/optionsbar_color_popover.py
+msgid "Highlight (dark)"
+msgstr "Markering (donker)"
+
+#: src/optionsbars/classic/optionsbar_color_popover.py
+#: src/tools/ui/tool-shape.ui
+msgid "Main color"
+msgstr "Hoofdkleur"
+
+#: src/optionsbars/classic/optionsbar_color_popover.py
+#: src/optionsbars/selection/optionsbar-selection.ui
+#: src/optionsbars/transform/optionsbar-crop.ui
+#: src/optionsbars/transform/optionsbar-skew.ui src/tools/ui/selection.ui
+#: src/tools/ui/tool-crop.ui src/tools/ui/tool-eraser.ui
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/erasers/eraser_area.py
+#: src/tools/classic_tools/erasers/eraser_rubber.py
+msgid "Secondary color"
+msgstr "Alternatieve kleur"
+
+#: src/optionsbars/classic/optionsbar-classic.ui
+msgid "Tool size"
+msgstr "Gereedschapsgrootte"
+
+#: src/optionsbars/classic/optionsbar-classic.ui src/tools/abstract_tool.py
+msgid "No options"
+msgstr "Geen opties"
+
+#: src/optionsbars/classic/optionsbar-color-popover.ui
+msgid "How the color will be applied to the existing pixels"
+msgstr "Hoe de kleur wordt toegepast op aanwezige pixels"
+
+#: src/optionsbars/classic/optionsbar-color-popover.ui
+msgid "Back to the palette"
+msgstr "Terug naar het palet"
+
+#: src/optionsbars/classic/optionsbar-color-popover.ui
+msgid "Palette"
+msgstr "Palet"
+
+#: src/optionsbars/selection/optionsbar-selection.ui
+msgid "Selection options"
+msgstr "Selectie-opties"
+
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+#: src/tools/ui/tool-eraser.ui
+msgid "Replace with…"
+msgstr "Vervangen door…"
+
+#: src/optionsbars/selection/optionsbar-selection.ui
+#: src/optionsbars/transform/optionsbar-crop.ui
+#: src/optionsbars/transform/optionsbar-skew.ui src/tools/ui/selection.ui
+#: src/tools/ui/tool-crop.ui src/tools/ui/tool-eraser.ui
+#: src/tools/classic_tools/erasers/eraser_area.py
+#: src/tools/classic_tools/erasers/eraser_rubber.py
+#: src/tools/transform_tools/filters/filter_transparency.py
+msgid "Transparency"
+msgstr "Doorzichtigheid"
+
+#: src/optionsbars/selection/optionsbar-selection.ui src/tools/ui/selection.ui
+msgid "Extract from this color"
+msgstr "Extraheren uit deze kleur"
+
+#: src/optionsbars/transform/abstract-optionsbar-transform.ui
+msgid "More options"
+msgstr "Meer opties"
+
+#: src/optionsbars/transform/optionsbar-crop.ui
+#: src/optionsbars/transform/optionsbar-skew.ui src/tools/ui/tool-crop.ui
+msgid "Expand with…"
+msgstr "Uitbreiden met…"
+
+#: src/optionsbars/transform/optionsbar-filters.ui
+#: src/tools/transform_tools/tool_filters.py
+msgid "Select a filter…"
+msgstr "Kies een filter…"
+
+#: src/optionsbars/transform/optionsbar-rotate.ui
+msgid "Angle (degrees)"
+msgstr "Hoek (graden)"
+
+#: src/optionsbars/transform/optionsbar-rotate.ui
+msgid "Angle"
+msgstr "Hoek"
+
+#: src/optionsbars/transform/optionsbar-rotate.ui src/tools/ui/tool-rotate.ui
+msgid "Rotate left"
+msgstr "Naar links draaien"
+
+#: src/optionsbars/transform/optionsbar-rotate.ui src/tools/ui/tool-rotate.ui
+msgid "Rotate right"
+msgstr "Naar rechts draaien"
+
+#: src/optionsbars/transform/optionsbar-rotate.ui src/tools/ui/tool-rotate.ui
+msgid "Flip horizontally"
+msgstr "Horizontaal spiegelen"
+
+#: src/optionsbars/transform/optionsbar-rotate.ui src/tools/ui/tool-rotate.ui
+msgid "Flip vertically"
+msgstr "Verticaal spiegelen"
+
+#. Context: the title of a menu to chose how the image will be scaled
+#: src/optionsbars/transform/optionsbar-scale.ui src/tools/ui/tool-scale.ui
+msgid "Keep proportions"
+msgstr "Afmetingen behouden"
+
+#. Context: an item in a menu whose title is "Keep proportions"
+#. Context for translations: "Always [keep proportions]"
+#: src/optionsbars/transform/optionsbar-scale.ui src/tools/ui/tool-scale.ui
+msgid "Always"
+msgstr "Altijd"
+
+#. Context: an item in a menu whose title is "Keep proportions"
+#. Context for translations: "[Keep proportions only] when scaling from corners"
+#: src/optionsbars/transform/optionsbar-scale.ui src/tools/ui/tool-scale.ui
+msgid "When scaling from corners"
+msgstr "Bij aanpassen vanuit de hoeken"
+
+#. Context for translations: "[Keep proportions only] when setting values manually"
+#: src/optionsbars/transform/optionsbar-scale.ui src/tools/ui/tool-scale.ui
+msgid "When setting values manually"
+msgstr "Bij handmatig instellen van de waarden"
+
+#. Context: an item in a menu whose title is "Keep proportions"
+#. Context for translations: "Never [keep proportions]"
+#: src/optionsbars/transform/optionsbar-scale.ui src/tools/ui/tool-scale.ui
+msgid "Never"
+msgstr "Nooit"
+
+#: src/optionsbars/transform/optionsbar-scale.ui src/tools/ui/tool-scale.ui
+msgid "Pixels"
+msgstr "Pixels"
+
+#: src/optionsbars/transform/optionsbar-scale.ui src/tools/ui/tool-scale.ui
+msgid "Percentage"
+msgstr "Percentage"
+
+#: src/optionsbars/transform/optionsbar-skew.ui
+msgid "Horizontal deformation"
+msgstr "Horizontaal verloop"
+
+#: src/optionsbars/transform/optionsbar-skew.ui
+msgid "Vertical deformation"
+msgstr "Verticaal verloop"
+
+#. Context: an error message
+#: src/tools/abstract_tool.py
+#, python-brace-format
+msgid "Can't start operation: wrong tool id (expected {0}, got {1})"
+msgstr ""
+"De actie kan niet worden uitgevoerd: ongeldige gereedschapsid (verwacht: {0} "
+"- verkregen: {1})"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+#: src/tools/ui/tool-pencil.ui
+msgid "Line shape"
+msgstr "Lijnvorm"
+
+#. Context: this is the name of a line shape
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+#: src/tools/ui/tool-pencil.ui src/tools/classic_tools/tool_pencil.py
+msgid "Round"
+msgstr "Rond"
+
+#. Context: this is the name of a line shape
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+#: src/tools/ui/tool-pencil.ui src/tools/ui/tool-points.ui
+#: src/tools/classic_tools/tool_pencil.py
+#: src/tools/classic_tools/tool_points.py
+msgid "Square"
+msgstr "Vierkant"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+#: src/tools/ui/tool-pencil.ui
+msgid "Outline"
+msgstr "Contour"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+#: src/tools/ui/tool-pencil.ui
+msgid "No dashes"
+msgstr "Geen streepjes"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+#: src/tools/ui/tool-pencil.ui
+msgid "Simple dashes"
+msgstr "Eenvoudige streepjes"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+#: src/tools/ui/tool-pencil.ui
+msgid "Long dashes"
+msgstr "Lange streepjes"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+#: src/tools/ui/tool-pencil.ui
+msgid "Short dashes"
+msgstr "Korte streepjes"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+#: src/tools/ui/tool-pencil.ui
+msgid "Alternated dashes"
+msgstr "Afwisselende streepjes"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+msgid "No arrow"
+msgstr "Geen pijl"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+msgid "Simple arrow"
+msgstr "Eenvoudige pijl"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-line.ui
+msgid "Double arrow"
+msgstr "Dubbele pijl"
+
+#: src/tools/ui/tool-arc.ui src/tools/ui/tool-brush.ui
+#: src/tools/ui/tool-highlight.ui src/tools/ui/tool-line.ui
+#: src/tools/ui/tool-pencil.ui src/tools/ui/tool-points.ui
+#: src/tools/ui/tool-shape.ui src/tools/ui/tool-text.ui
+msgid "Antialiasing"
+msgstr "Anti-kartelvorming"
+
+#: src/tools/ui/tool-brush.ui src/tools/classic_tools/brushes/brush_simple.py
+msgid "Simple brush"
+msgstr "Eenvoudige kwast"
+
+#: src/tools/ui/tool-brush.ui src/tools/classic_tools/brushes/brush_airbrush.py
+msgid "Airbrush"
+msgstr "Airbrush"
+
+#: src/tools/ui/tool-brush.ui src/tools/classic_tools/brushes/brush_hairy.py
+msgid "Hairy brush"
+msgstr "Harige borstel"
+
+#: src/tools/ui/tool-brush.ui src/tools/classic_tools/brushes/brush_nib.py
+msgid "Calligraphic nib"
+msgstr "Kalligrafisch uiteinde"
+
+#: src/tools/ui/tool-brush.ui src/tools/classic_tools/brushes/brush_nib.py
+msgid "Right-handed nib"
+msgstr "Rechtshandig uiteinde"
+
+#: src/tools/ui/tool-brush.ui src/tools/classic_tools/brushes/brush_nib.py
+msgid "Vertical nib"
+msgstr "Verticaal uiteinde"
+
+#: src/tools/ui/tool-brush.ui src/tools/classic_tools/brushes/brush_nib.py
+msgid "Left-handed nib"
+msgstr "Linkshandig uiteinde"
+
+#. brush_direction == 'horizontal':
+#: src/tools/ui/tool-brush.ui src/tools/classic_tools/brushes/brush_nib.py
+msgid "Horizontal nib"
+msgstr "Horizontaal uiteinde"
+
+#: src/tools/ui/tool-eraser.ui src/tools/classic_tools/erasers/eraser_rubber.py
+msgid "Rubber eraser"
+msgstr "Rubberen gum"
+
+#: src/tools/ui/tool-eraser.ui src/tools/classic_tools/erasers/eraser_area.py
+msgid "Rectangle area"
+msgstr "Rechthoekig gebied"
+
+#. Context: this feature erases the color where the user clicked.
+#. For example to cut out an object from its solid background.
+#: src/tools/ui/tool-eraser.ui src/tools/classic_tools/erasers/eraser_color.py
+msgid "Remove color"
+msgstr "Kleur verwijderen"
+
+#: src/tools/ui/tool-eraser.ui src/tools/classic_tools/erasers/eraser_area.py
+msgid "Blur"
+msgstr "Vervaging"
+
+#: src/tools/ui/tool-eraser.ui src/tools/classic_tools/erasers/eraser_area.py
+msgid "Shuffle pixels"
+msgstr "Pixels husselen"
+
+#: src/tools/ui/tool-eraser.ui src/tools/classic_tools/erasers/eraser_area.py
+msgid "Shuffle and blur"
+msgstr "Husselen en vervagen"
+
+#. Context: a filter to censor the image with some little tiles
+#: src/tools/ui/tool-eraser.ui src/tools/ui/tool-filters.ui
+#: src/tools/classic_tools/erasers/eraser_area.py
+#: src/tools/transform_tools/tool_filters.py
+msgid "Mosaic"
+msgstr "Mozaïek"
+
+#: src/tools/ui/tool-eraser.ui
+msgid "Solid color"
+msgstr "Vlakke kleur"
+
+#: src/tools/ui/tool-filters.ui src/tools/transform_tools/tool_filters.py
+msgid "Change saturation"
+msgstr "Verzadiging aanpassen"
+
+#. Context: a filter adding like a light veil on the image
+#: src/tools/ui/tool-filters.ui src/tools/transform_tools/tool_filters.py
+msgid "Veil"
+msgstr "Sluier"
+
+#: src/tools/ui/tool-filters.ui src/tools/ui/tool-highlight.ui
+#: src/tools/transform_tools/tool_filters.py
+msgid "Add transparency"
+msgstr "Doorzichtigheid toevoegen"
+
+#: src/tools/ui/tool-filters.ui src/tools/transform_tools/tool_filters.py
+#: src/tools/transform_tools/filters/filter_contrast.py
+msgid "Increase contrast"
+msgstr "Contrast verhogen"
+
+#. Context: the title of the menu with various types of blurring
+#. filters and their options.
+#: src/tools/ui/tool-filters.ui
+msgid "Blurring"
+msgstr "Vervaging"
+
+#: src/tools/ui/tool-filters.ui src/tools/transform_tools/tool_filters.py
+msgid "Fast blur"
+msgstr "Snelle vervaging"
+
+#: src/tools/ui/tool-filters.ui src/tools/transform_tools/tool_filters.py
+msgid "Slow blur"
+msgstr "Langzame vervaging"
+
+#: src/tools/ui/tool-filters.ui
+msgid "Blur direction"
+msgstr "Vervaagrichting"
+
+#. Context: about the blur direction
+#: src/tools/ui/tool-filters.ui
+msgid "No direction"
+msgstr "Geen richting"
+
+#: src/tools/ui/tool-filters.ui
+msgid "Blur horizontally"
+msgstr "Horizontaal vervagen"
+
+#: src/tools/ui/tool-filters.ui
+msgid "Blur vertically"
+msgstr "Verticaal vervagen"
+
+#: src/tools/ui/tool-filters.ui src/tools/transform_tools/tool_filters.py
+msgid "Invert colors"
+msgstr "Kleuren omdraaien"
+
+#: src/tools/ui/tool-highlight.ui
+msgid "Straighten the line"
+msgstr "Lijn rechttrekken"
+
+#: src/tools/ui/tool-line.ui
+msgid "Color gradient"
+msgstr "Kleurverloop"
+
+#: src/tools/ui/tool-line.ui
+msgid "Locked direction"
+msgstr "Vergrendelde richting"
+
+#. Context: title for the list of the possible painting algorithms.
+#: src/tools/ui/tool-paint.ui
+msgid "Behavior"
+msgstr "Gedrag"
+
+#. Context: this is one of the possible painting algorithms. It
+#. tries to draw a shape around the area to paint, and fill it
+#. with the new color. The shape is approximative so it's not the
+#. default behavior of the tool.
+#: src/tools/ui/tool-paint.ui
+msgid "Encircle and fill"
+msgstr "Omcirkelen en opvullen"
+
+#. Context: this is one of the possible painting algorithms. It
+#. erases the color the user clicked, and then replace transparent
+#. pixels with the new color.
+#: src/tools/ui/tool-paint.ui
+msgid "Erase and replace"
+msgstr "Wissen en vervangen"
+
+#. Context: this is one of the possible painting algorithms. It
+#. paints over the entire image, instead of following the shapes
+#. already drawn.
+#: src/tools/ui/tool-paint.ui
+msgid "Entire image"
+msgstr "Gehele afbeelding"
+
+#: src/tools/ui/tool-points.ui
+msgid "Dots type"
+msgstr "Soort stippen"
+
+#: src/tools/ui/tool-points.ui src/tools/ui/tool-shape.ui
+#: src/tools/classic_tools/tool_points.py src/tools/classic_tools/tool_shape.py
+msgid "Circle"
+msgstr "Cirkel"
+
+#: src/tools/ui/tool-points.ui src/tools/classic_tools/tool_points.py
+msgid "Cross"
+msgstr "Kruis"
+
+#: src/tools/ui/tool-points.ui src/tools/classic_tools/tool_points.py
+msgid "X-shaped cross"
+msgstr "X-vormig kruis"
+
+#: src/tools/ui/tool-points.ui
+msgid "Include a number"
+msgstr "Inclusief getal"
+
+#: src/tools/ui/tool-points.ui
+msgid "Next number"
+msgstr "Volgend getal"
+
+#: src/tools/ui/tool-points.ui
+msgid "Reset number"
+msgstr "Standaardwaarde"
+
+#: src/tools/ui/tool-points.ui
+msgid "Decrement number"
+msgstr "Getal verlagen"
+
+#: src/tools/ui/tool-points.ui
+msgid "Increment number"
+msgstr "Getal verhogen"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Solid outline"
+msgstr "Effen contour"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Dashed outline"
+msgstr "Gestreepte rand"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "No outline"
+msgstr "Geen randcontour"
+
+#: src/tools/ui/tool-shape.ui
+msgid "Filling"
+msgstr "Opvullen"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Empty shape"
+msgstr "Blanco vorm"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Horizontal gradient"
+msgstr "Horizontaal verloop"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Vertical gradient"
+msgstr "Verticaal verloop"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Radial gradient"
+msgstr "Straalverloop"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Rectangle"
+msgstr "Rechthoek"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Rounded rectangle"
+msgstr "Afgeronde rechthoek"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Oval"
+msgstr "Ovaal"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Polygon"
+msgstr "Polygoon"
+
+#: src/tools/ui/tool-shape.ui src/tools/classic_tools/tool_shape.py
+msgid "Free shape"
+msgstr "Vrije vorm"
+
+#: src/tools/ui/tool-shape.ui
+msgid "Close shape"
+msgstr "Vorm sluiten"
+
+#: src/tools/ui/tool-text.ui
+msgid "Insert here"
+msgstr "Hier invoegen"
+
+#: src/tools/ui/tool-text.ui
+msgid "Font"
+msgstr "Lettertype"
+
+#: src/tools/ui/tool-text.ui
+msgid "Select a font…"
+msgstr "Kies een lettertype…"
+
+#: src/tools/ui/tool-text.ui
+msgid "Italic"
+msgstr "Cursief"
+
+#: src/tools/ui/tool-text.ui
+msgid "Bold"
+msgstr "Vetgedrukt"
+
+#. Context: the types of background behind the inserted text
+#: src/tools/ui/tool-text.ui
+msgid "Background"
+msgstr "Achtergrond"
+
+#. Context: a type of background behind the inserted text
+#: src/tools/ui/tool-text.ui src/tools/classic_tools/tool_text.py
+msgid "No background"
+msgstr "Geen achtergrond"
+
+#. Context: a type of background behind the inserted text
+#: src/tools/ui/tool-text.ui src/tools/classic_tools/tool_text.py
+msgid "Shadow"
+msgstr "Kleurschaduw"
+
+#. Context: a type of background behind the inserted text
+#: src/tools/ui/tool-text.ui src/tools/classic_tools/tool_text.py
+msgid "Thin outline"
+msgstr "Dunne randcontour"
+
+#. Context: a type of background behind the inserted text
+#: src/tools/ui/tool-text.ui src/tools/classic_tools/tool_text.py
+msgid "Thick outline"
+msgstr "Dikke randcontour"
+
+#. Context: a type of background behind the inserted text
+#: src/tools/ui/tool-text.ui src/tools/classic_tools/tool_text.py
+msgid "Rectangle background"
+msgstr "Rechthoekige achtergrond"
+
+#: src/tools/classic_tools/tool_arc.py
+msgid "Curve"
+msgstr "Boog"
+
+#: src/tools/classic_tools/tool_arc.py
+msgid "Curve options"
+msgstr "Boogopties"
+
+#: src/tools/classic_tools/tool_arc.py
+msgid "Draw a second segment to complete the curve"
+msgstr "Teken een tweede segment om de kromming te voltooien"
+
+#: src/tools/classic_tools/tool_arc.py src/tools/classic_tools/tool_line.py
+msgid "Dashed arrow"
+msgstr "Gestreepte pijl"
+
+#: src/tools/classic_tools/tool_arc.py src/tools/classic_tools/tool_line.py
+msgid "Arrow"
+msgstr "Pijl"
+
+#: src/tools/classic_tools/tool_arc.py src/tools/classic_tools/tool_line.py
+#: src/tools/classic_tools/tool_pencil.py
+msgid "Dashed"
+msgstr "Gestreept"
+
+#: src/tools/classic_tools/tool_arc.py src/tools/classic_tools/tool_line.py
+#: src/tools/classic_tools/tool_pencil.py
+msgid "Press <Alt> to toggle the 'outline' option"
+msgstr "Druk op <Shift> om de optie ‘contour’ te wijzigen"
+
+#: src/tools/classic_tools/tool_brush.py
+msgid "Brush options"
+msgstr "Kwastopties"
+
+#: src/tools/classic_tools/tool_eraser.py
+msgid "Press <Shift> to erase a path instead"
+msgstr "Druk op <Shift> om een spoor te wissen"
+
+#: src/tools/classic_tools/tool_eraser.py
+msgid "Press <Shift> to erase a rectangle area instead"
+msgstr "Druk op <Shift> om een rechthoekig gebied te wissen"
+
+#: src/tools/classic_tools/tool_eraser.py
+msgid "Eraser options"
+msgstr "Gumopties"
+
+#: src/tools/classic_tools/tool_highlight.py
+msgid "Press <Shift> to temporarily highlight on dark background instead"
+msgstr "Druk op <Shift> om de markering te tonen op een zwarte achtergrond"
+
+#: src/tools/classic_tools/tool_highlight.py
+msgid "Press <Shift> to temporarily highlight on light background instead"
+msgstr "Druk op <Shift> om de markering te tonen op een lichte achtergrond"
+
+#: src/tools/classic_tools/tool_highlight.py
+msgid "Highlighter options"
+msgstr "Markeeropties"
+
+#: src/tools/classic_tools/tool_line.py
+msgid "Line"
+msgstr "Lijn"
+
+#: src/tools/classic_tools/tool_line.py src/tools/classic_tools/tool_shape.py
+#: src/tools/selection_tools/select_rect.py
+#, python-format
+msgid "Width: %spx"
+msgstr "Breedte: %s px"
+
+#: src/tools/classic_tools/tool_line.py src/tools/classic_tools/tool_shape.py
+#: src/tools/selection_tools/select_rect.py
+#, python-format
+msgid "Height: %spx"
+msgstr "Hoogte: %s px"
+
+#: src/tools/classic_tools/tool_line.py
+#, python-format
+msgid "Length: %spx"
+msgstr "Lengte: %s px"
+
+#: src/tools/classic_tools/tool_line.py
+msgid "Line options"
+msgstr "Lijnopties"
+
+#: src/tools/classic_tools/tool_line.py
+msgid "Press <Shift> to unlock the line direction"
+msgstr "Druk op <Shift> om de lijnrichting te los te maken"
+
+#: src/tools/classic_tools/tool_line.py
+msgid "Press <Shift> to lock the line direction"
+msgstr "Druk op <Shift> om de lijnrichting te vast te maken"
+
+#: src/tools/classic_tools/tool_paint.py
+msgid "Painting options"
+msgstr "Kwastopties"
+
+#: src/tools/classic_tools/tool_paint.py
+msgid "Click on an area to replace its color by transparency"
+msgstr ""
+"Klik een gebied aan om de kleur ervan te vervangen door doorzichtigheid"
+
+#: src/tools/classic_tools/tool_paint.py
+msgid "Click on the canvas to entirely paint it"
+msgstr "Klik op het canvas om het op te vullen"
+
+#: src/tools/classic_tools/tool_paint.py
+#: src/tools/selection_tools/select_color.py
+msgid "May not work for complex shapes"
+msgstr "Let op: dit werkt mogelijk niet bij gebruik van complexe vormen"
+
+#: src/tools/classic_tools/tool_paint.py
+#: src/tools/selection_tools/select_color.py
+msgid "It will not work well if the area's edges are blurry"
+msgstr "Let op: dit werkt niet goed als de randen vervaagd zijn"
+
+#: src/tools/classic_tools/tool_pencil.py
+msgid "Pencil"
+msgstr "Potlood"
+
+#: src/tools/classic_tools/tool_pencil.py
+msgid "Pencil options"
+msgstr "Potloodopties"
+
+#: src/tools/classic_tools/tool_points.py
+msgid "Points options"
+msgstr "Puntopties"
+
+#: src/tools/classic_tools/tool_points.py
+#, python-format
+msgid "Next number: %s"
+msgstr "Volgend getal: %s"
+
+#. Context: fill a shape with the color of the left click
+#: src/tools/classic_tools/tool_shape.py
+msgid "Filled with main color"
+msgstr "Opgevuld met hoofdkleur"
+
+#. Context: fill a shape with the color of the right click
+#: src/tools/classic_tools/tool_shape.py
+msgid "Filled with secondary color"
+msgstr "Opgevuld met alternatieve kleur"
+
+#: src/tools/classic_tools/tool_shape.py
+msgid "Shape"
+msgstr "Vorm"
+
+#: src/tools/classic_tools/tool_shape.py
+#, python-format
+msgid "Radius: %spx"
+msgstr "Straal: %s px"
+
+#: src/tools/classic_tools/tool_shape.py
+msgid "Shape options"
+msgstr "Vormopties"
+
+#: src/tools/classic_tools/tool_shape.py
+#: src/tools/selection_tools/select_free.py
+msgid "Click on the shape's first point to close it."
+msgstr "Klik op het eerste punt om te sluiten."
+
+#: src/tools/classic_tools/tool_shape.py
+msgid "Press <Alt>, <Shift>, or both, to quickly change the 'filling' option"
+msgstr "Druk op <Alt>, <Shift> of beide om de optie ‘opvullen’ te wijzigen"
+
+#: src/tools/classic_tools/tool_text.py
+msgid "Text"
+msgstr "Tekst"
+
+#: src/tools/classic_tools/tool_text.py
+msgid "Text options"
+msgstr "Lettertype-opties"
+
+#: src/tools/classic_tools/tool_text.py
+msgid "Grab the rectangle to adjust the text position"
+msgstr "Versleep de rechthoek om de tekstlocatie te wijzigen"
+
+#: src/tools/classic_tools/tool_text.py
+msgid "Click outside the rectangle to apply"
+msgstr "Klik buiten de rechthoek om toe te passen"
+
+#: src/tools/classic_tools/brushes/brush_airbrush.py
+msgid "Density depends on the stylus pressure"
+msgstr "De dichtheid is afhankelijk van de stylusdruk"
+
+#: src/tools/classic_tools/brushes/brush_airbrush.py
+msgid "Density depends on the mouse speed"
+msgstr "De dichtheid is afhankelijk van de cursorsnelheid"
+
+#: src/tools/classic_tools/brushes/brush_hairy.py
+#: src/tools/classic_tools/brushes/brush_nib.py
+#: src/tools/classic_tools/brushes/brush_simple.py
+msgid "Width depends on the stylus pressure"
+msgstr "De breedte is afhankelijk van de stylusdruk"
+
+#: src/tools/classic_tools/brushes/brush_nib.py
+msgid "Width depends on the line orientation"
+msgstr "De breedte is afhankelijk van de lijnoriëntatie"
+
+#: src/tools/classic_tools/brushes/brush_simple.py
+msgid "Width depends on the mouse speed"
+msgstr "De breedte is afhankelijk van de cursorsnelheid"
+
+#: src/tools/selection_tools/abstract_select.py
+msgid "Drag the selection or right-click on the canvas"
+msgstr "Versleep de selectie of rechtsklik op het canvas"
+
+#: src/tools/selection_tools/abstract_select.py
+msgid "Select an area or right-click on the canvas"
+msgstr "Selecteer een gebied of rechtsklik op het canvas"
+
+#: src/tools/selection_tools/select_rect.py
+msgid "Rectangle selection"
+msgstr "Rechthoekselectie"
+
+#: src/tools/transform_tools/abstract_transform_tool.py
+msgid "Error: invalid values"
+msgstr "Fout: ongeldige waarden"
+
+#. The options of the "crop" tool are all about how to expand the canvas,
+#. hence this label.
+#: src/tools/transform_tools/tool_crop.py
+msgid "Expanding options"
+msgstr "Vergrootopties"
+
+#: src/tools/transform_tools/tool_crop.py
+msgid "The sides you'll crop are hinted by the mouse pointer"
+msgstr "De bijgesneden zijden worden door de cursor aangeduid"
+
+#: src/tools/transform_tools/tool_crop.py
+msgid "Cropping the selection"
+msgstr "Bezig met bijsnijden van selectie"
+
+#: src/tools/transform_tools/tool_crop.py
+msgid "Cropping or expanding the canvas"
+msgstr "Bezig met bijsnijden of vergroten van canvas"
+
+#: src/tools/transform_tools/tool_crop.py
+#: src/tools/transform_tools/tool_rotate.py
+#: src/tools/transform_tools/tool_scale.py
+#: src/tools/transform_tools/tool_skew.py
+msgid "Don't forget to confirm the operation!"
+msgstr "Vergeet niet om de actie te bevestigen!"
+
+#: src/tools/transform_tools/tool_crop.py
+#: src/tools/transform_tools/tool_skew.py
+msgid ""
+"Press <Alt>, <Shift>, or both, to quickly change the 'expand with' option"
+msgstr ""
+"Druk op <Alt>, <Shift> of beide om de optie ‘vergroten met’ te wijzigen"
+
+#: src/tools/transform_tools/tool_filters.py
+msgid "Active filter"
+msgstr "Actief filter"
+
+#: src/tools/transform_tools/tool_filters.py
+msgid "Click on the image to preview the selected filter"
+msgstr "Klik op de afbeelding voor een voorvertoning van het gekozen filter"
+
+#. Context: a filter. See "image embossing" on wikipedia
+#: src/tools/transform_tools/tool_filters.py
+msgid "Emboss"
+msgstr "Reliëf toepassen"
+
+#: src/tools/transform_tools/tool_rotate.py
+msgid "Rotating options"
+msgstr "Draaiopties"
+
+#: src/tools/transform_tools/tool_rotate.py
+msgid "Rotating the selection"
+msgstr "Bezig met draaien van selectie"
+
+#: src/tools/transform_tools/tool_rotate.py
+msgid "Rotating the canvas"
+msgstr "Bezig met draaien van canvas"
+
+#: src/tools/transform_tools/tool_scale.py
+msgid "Scaling options"
+msgstr "Schaalopties"
+
+#: src/tools/transform_tools/tool_scale.py
+msgid "Scaling the selection"
+msgstr "Bezig met wijzigen van selectiegrootte"
+
+#: src/tools/transform_tools/tool_scale.py
+msgid "Scaling the canvas"
+msgstr "Bezig met wijzigen van canvasgrootte"
+
+#: src/tools/transform_tools/tool_scale.py
+msgid "Press <Shift> to quickly toggle the 'lock proportions' option"
+msgstr "Druk op <Shift> om de optie ‘afmetingen behouden’ te wijzigen"
+
+#: src/tools/transform_tools/tool_skew.py
+msgid "Skewing options"
+msgstr "Scheeftrekopties"
+
+#: src/tools/transform_tools/tool_skew.py
+msgid "The directions of the deformation are hinted by the mouse pointer"
+msgstr "De vervormrichtingen worden door de cursor aangeduid"
+
+#: src/tools/transform_tools/tool_skew.py
+msgid "Skewing the selection"
+msgstr "Bezig met scheeftrekken van selectie"
+
+#: src/tools/transform_tools/tool_skew.py
+msgid "Skewing the canvas"
+msgstr "Bezig met scheeftrekken van canvas"
+
+#: src/tools/transform_tools/filters/filter_blur.py
+msgid "Blur radius"
+msgstr "Vervaagstraal"
+
+#: src/tools/transform_tools/filters/filter_saturation.py
+msgid "Saturation"
+msgstr "Verzadiging"
+
+#~ msgid "Transform"
+#~ msgstr "Transformeren"
+
+#~ msgid "Horizontal"
+#~ msgstr "Horizontaal"
+
+#~ msgid "Vertical"
+#~ msgstr "Verticaal"
+
+#~ msgid "A drawing application for the GNOME desktop"
+#~ msgstr "Een tekenprogramma voor de GNOME-werkomgeving"
+
+#~ msgid "Quit"
+#~ msgstr "Afsluiten"
+
+#~ msgid "Close"
+#~ msgstr "Sluiten"

@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<interface domain="drawing">
+
+  <!-- Hamburger menu for smartphone -->
+  <menu id="long-window-menu">
+    <section>
+      <item>
+        <attribute name="action">win.open</attribute>
+        <attribute name="label" translatable="yes">Open an image</attribute>
+      </item>
+    </section>
+    <section>
+      <submenu id="new-image-menu">
+        <attribute name="label" translatable="yes">New Image</attribute>
+        <section>
+          <item>
+            <attribute name="label" translatable="yes">New Blank Image</attribute>
+            <attribute name="action">win.new_tab</attribute>
+          </item>
+          <item>
+            <attribute name="label" translatable="yes">New Image With Custom Size</attribute>
+            <attribute name="action">win.new_tab_custom</attribute>
+          </item>
+          <item>
+            <attribute name="label" translatable="yes">New Image From Selection</attribute>
+            <attribute name="action">win.new_tab_selection</attribute>
+          </item>
+          <item>
+            <attribute name="label" translatable="yes">New Image From Clipboard</attribute>
+            <attribute name="action">win.new_tab_clipboard</attribute>
+          </item>
+        </section>
+        <section>
+          <item>
+            <attribute name="action">app.new_window</attribute>
+            <attribute name="label" translatable="yes">New Window</attribute>
+          </item>
+        </section>
+      </submenu>
+    </section>
+    <section>
+      <attribute name="display-hint">horizontal-buttons</attribute>
+      <item>
+        <attribute name="label" translatable="yes">Reload file</attribute>
+        <attribute name="action">win.reload_file</attribute>
+        <attribute name="verb-icon">view-refresh-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Image properties</attribute>
+        <attribute name="action">win.properties</attribute>
+        <attribute name="verb-icon">document-properties-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="action">win.fullscreen</attribute>
+        <attribute name="label" translatable="yes">Fullscreen</attribute>
+        <attribute name="verb-icon">view-fullscreen-symbolic</attribute>
+      </item>
+    </section>
+    <section id="save-section">
+      <item>
+        <attribute name="action">win.save_alphaless</attribute>
+        <attribute name="label" translatable="yes">Save without transparency</attribute>
+      </item>
+      <item>
+        <!-- This "feature" is only visible on April Fools' day, and it -->
+        <!-- will just rickroll the user. -->
+        <attribute name="label" translatable="yes">Prepare as NFT…</attribute>
+        <attribute name="action">app.april-fools</attribute>
+        <attribute name="hidden-when">action-missing</attribute>
+      </item>
+      <item>
+        <attribute name="action">win.save_as</attribute>
+        <attribute name="label" translatable="yes">Save as…</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Export as…</attribute>
+        <attribute name="action">win.export_as</attribute>
+      </item>
+    </section>
+    <section id="share-section">
+      <item>
+        <attribute name="action">win.to_clipboard</attribute>
+        <attribute name="label" translatable="yes">Copy to clipboard</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Print</attribute>
+        <attribute name="action">win.print</attribute>
+      </item>
+    </section>
+    <section>
+      <!-- <attribute name="display-hint">horizontal-buttons</attribute> -->
+      <item>
+        <attribute name="label" translatable="yes">Show tools names</attribute>
+        <attribute name="action">win.show-labels</attribute>
+        <attribute name="verb-icon">view-list-symbolic</attribute>
+      </item>
+      <!-- <item> -->
+      <!--   <attribute name="label" translatable="yes">Dark theme variant</attribute> -->
+      <!--   <attribute name="action">win.dark-theme-variant</attribute> -->
+      <!--   <attribute name="verb-icon">night-light-symbolic</attribute> -->
+      <!-- </item> -->
+      <item>
+        <attribute name="label" translatable="yes">Preferences</attribute>
+        <attribute name="action">app.settings</attribute>
+        <attribute name="verb-icon">preferences-system-symbolic</attribute>
+      </item>
+    </section>
+    <section>
+      <attribute name="display-hint">horizontal-buttons</attribute>
+      <item>
+        <attribute name="label" translatable="yes">What's new in Drawing</attribute>
+        <attribute name="action">win.help_news_open</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Dismiss</attribute>
+        <attribute name="action">win.help_news_dismiss</attribute>
+        <attribute name="verb-icon">window-close-symbolic</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="action">app.help</attribute>
+        <attribute name="label" translatable="yes">Help</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">About Drawing</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+
+  <!-- Hamburger menu for desktop -->
+  <menu id="short-window-menu">
+    <section>
+      <attribute name="display-hint">horizontal-buttons</attribute>
+      <item>
+        <attribute name="label" translatable="yes">Reload file</attribute>
+        <attribute name="action">win.reload_file</attribute>
+        <attribute name="verb-icon">view-refresh-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Image properties</attribute>
+        <attribute name="action">win.properties</attribute>
+        <attribute name="verb-icon">document-properties-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="action">win.fullscreen</attribute>
+        <attribute name="label" translatable="yes">Fullscreen</attribute>
+        <attribute name="verb-icon">view-fullscreen-symbolic</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="action">win.save_alphaless</attribute>
+        <attribute name="label" translatable="yes">Save without transparency</attribute>
+      </item>
+      <item>
+        <!-- This "feature" is only visible on April Fools' day, and it -->
+        <!-- will just rickroll the user. -->
+        <attribute name="label" translatable="yes">Prepare as NFT…</attribute>
+        <attribute name="action">app.april-fools</attribute>
+        <attribute name="hidden-when">action-missing</attribute>
+      </item>
+      <item>
+        <attribute name="action">win.save_as</attribute>
+        <attribute name="label" translatable="yes">Save as…</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Export as…</attribute>
+        <attribute name="action">win.export_as</attribute>
+      </item>
+    </section>
+    <section id="share-section">
+      <item>
+        <attribute name="action">win.to_clipboard</attribute>
+        <attribute name="label" translatable="yes">Copy to clipboard</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Print</attribute>
+        <attribute name="action">win.print</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Show tools names</attribute>
+        <attribute name="action">win.show-labels</attribute>
+      </item>
+      <!-- <item> -->
+      <!--   <attribute name="label" translatable="yes">Dark theme variant</attribute> -->
+      <!--   <attribute name="action">win.dark-theme-variant</attribute> -->
+      <!-- </item> -->
+      <item>
+        <attribute name="label" translatable="yes">Preferences</attribute>
+        <attribute name="action">app.settings</attribute>
+      </item>
+    </section>
+    <section>
+      <attribute name="display-hint">horizontal-buttons</attribute>
+      <item>
+        <attribute name="label" translatable="yes">What's new in Drawing</attribute>
+        <attribute name="action">win.help_news_open</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Dismiss</attribute>
+        <attribute name="action">win.help_news_dismiss</attribute>
+        <attribute name="verb-icon">window-close-symbolic</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="action">app.help</attribute>
+        <attribute name="label" translatable="yes">Help</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">About Drawing</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+
+  <!-- Hamburger menu for layouts with a more rich toolbar -->
+  <menu id="minimal-window-menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Reload file</attribute>
+        <attribute name="action">win.reload_file</attribute>
+        <attribute name="verb-icon">view-refresh-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Image properties</attribute>
+        <attribute name="action">win.properties</attribute>
+        <attribute name="verb-icon">document-properties-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="action">win.fullscreen</attribute>
+        <attribute name="label" translatable="yes">Fullscreen</attribute>
+        <attribute name="verb-icon">view-fullscreen-symbolic</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Show tools names</attribute>
+        <attribute name="action">win.show-labels</attribute>
+      </item>
+      <!-- <item> -->
+      <!--   <attribute name="label" translatable="yes">Dark theme variant</attribute> -->
+      <!--   <attribute name="action">win.dark-theme-variant</attribute> -->
+      <!-- </item> -->
+      <item>
+        <attribute name="label" translatable="yes">Preferences</attribute>
+        <attribute name="action">app.settings</attribute>
+      </item>
+    </section>
+    <section>
+      <attribute name="display-hint">horizontal-buttons</attribute>
+      <item>
+        <attribute name="label" translatable="yes">What's new in Drawing</attribute>
+        <attribute name="action">win.help_news_open</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Dismiss</attribute>
+        <attribute name="action">win.help_news_dismiss</attribute>
+        <attribute name="verb-icon">window-close-symbolic</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="action">app.help</attribute>
+        <attribute name="label" translatable="yes">Help</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">About Drawing</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+
+</interface>
+

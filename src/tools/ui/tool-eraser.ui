@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="drawing">
+
+  <menu id="options-menu">
+    <section>
+      <attribute name="display-hint">horizontal-buttons</attribute>
+      <item>
+        <attribute name="label" translatable="yes">Rubber eraser</attribute>
+        <attribute name="action">win.eraser-shape</attribute>
+        <attribute name="target">rubber</attribute>
+        <attribute name="verb-icon">tool-pencil-symbolic</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Rectangle area</attribute>
+        <attribute name="action">win.eraser-shape</attribute>
+        <attribute name="target">rectangle</attribute>
+        <attribute name="verb-icon">tool-rectangle-symbolic</attribute>
+      </item>
+      <item>
+        <!-- Context: this feature erases the color where the user clicked. -->
+        <!-- For example to cut out an object from its solid background. -->
+        <attribute name="label" translatable="yes">Remove color</attribute>
+        <attribute name="action">win.eraser-shape</attribute>
+        <attribute name="target">color</attribute>
+        <attribute name="verb-icon">tool-magic-symbolic</attribute>
+      </item>
+    </section>
+
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Blur</attribute>
+        <attribute name="action">win.eraser-type</attribute>
+        <attribute name="target">blur</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Shuffle pixels</attribute>
+        <attribute name="action">win.eraser-type</attribute>
+        <attribute name="target">shuffle</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Shuffle and blur</attribute>
+        <attribute name="action">win.eraser-type</attribute>
+        <attribute name="target">mixed</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Mosaic</attribute>
+        <attribute name="action">win.eraser-type</attribute>
+        <attribute name="target">mosaic</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Solid color</attribute>
+        <attribute name="action">win.eraser-type</attribute>
+        <attribute name="target">solid</attribute>
+      </item>
+    </section>
+
+    <section>
+      <attribute name="label" translatable="yes">Replace with…</attribute>
+      <item>
+        <attribute name="label" translatable="yes">Transparency</attribute>
+        <attribute name="action">win.selection-color</attribute>
+        <attribute name="target">alpha</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Default color</attribute>
+        <attribute name="action">win.selection-color</attribute>
+        <attribute name="target">initial</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Secondary color</attribute>
+        <attribute name="action">win.selection-color</attribute>
+        <attribute name="target">secondary</attribute>
+      </item>
+    </section>
+  </menu>
+
+</interface>
+

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="drawing">
+  <object class="GtkBox" id="toolbar">
+    <property name="orientation">horizontal</property>
+    <child>
+      <object class="GtkToolbar">
+        <property name="show-arrow">True</property>
+        <property name="icon-size">small-toolbar</property>
+        <child>
+          <object class="GtkMenuToolButton" id="new_menu_btn">
+            <property name="action-name">win.new_tab</property>
+            <property name="icon-name">tab-new-symbolic</property>
+            <property name="tooltip-text" translatable="yes">New Image</property>
+            <property name="label" translatable="yes">New Image</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton">
+            <property name="is-important">True</property>
+            <property name="action-name">win.open</property>
+            <property name="icon-name">document-open-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Open an image</property>
+            <property name="label" translatable="yes">Open</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparatorToolItem" />
+        </child>
+        <child>
+          <object class="GtkToolButton">
+            <property name="action-name">win.import</property>
+            <property name="icon-name">insert-image-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Import</property>
+            <property name="label" translatable="yes">Import</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton">
+            <property name="action-name">win.paste</property>
+            <property name="icon-name">edit-paste-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Paste</property>
+            <property name="label" translatable="yes">Paste</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparatorToolItem" />
+        </child>
+        <child>
+          <object class="GtkToolButton">
+            <property name="is-important">True</property>
+            <property name="action-name">win.undo</property>
+            <property name="icon-name">edit-undo-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Undo</property>
+            <property name="label" translatable="yes">Undo</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton">
+            <property name="action-name">win.redo</property>
+            <property name="icon-name">edit-redo-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Redo</property>
+            <property name="label" translatable="yes">Redo</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparatorToolItem" />
+        </child>
+        <child>
+          <object class="GtkMenuToolButton" id="save_menu_btn">
+            <property name="is-important">True</property>
+            <property name="action-name">win.save</property>
+            <property name="icon-name">document-save-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Save</property>
+            <property name="label" translatable="yes">Save</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparatorToolItem" />
+        </child>
+        <child>
+          <object class="GtkToolButton">
+            <property name="action-name">win.print</property>
+            <property name="icon-name">document-print-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Print</property>
+            <property name="label" translatable="yes">Print</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton">
+            <property name="action-name">win.to_clipboard</property>
+            <property name="icon-name">send-to-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Copy to clipboard</property>
+            <property name="label" translatable="yes">Copy to clipboard</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparatorToolItem" />
+        </child>
+        <child>
+          <object class="GtkToolButton">
+            <property name="action-name">win.zoom_out</property>
+            <property name="icon-name">zoom-out-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Zoom Out</property>
+            <property name="label" translatable="yes">Zoom Out</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton">
+            <property name="action-name">win.zoom_100</property>
+            <property name="icon-name">zoom-original-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Original Zoom</property>
+            <property name="label" translatable="yes">Original Zoom</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton">
+            <property name="action-name">win.zoom_in</property>
+            <property name="icon-name">zoom-in-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Zoom In</property>
+            <property name="label" translatable="yes">Zoom In</property>
+          </object>
+          <packing>
+            <property name="homogeneous">False</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuButton" id="main_menu_btn">
+        <property name="relief">none</property>
+        <property name="valign">center</property>
+        <child>
+          <object class="GtkImage">
+            <property name="icon-name">open-menu-symbolic</property>
+            <property name="visible">True</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="pack-type">end</property>
+      </packing>
+    </child>
+  </object>
+</interface>

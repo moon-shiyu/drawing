@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its" type="task" style="task"
+      id="tools_classic">
+
+  <info>
+    <link type="guide" xref="index#tools"/>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <credit type="author">
+      <name its:translate="no">Romain F. T.</name>
+      <email its:translate="no">rrroschan@gmail.com</email>
+    </credit>
+    <desc>Draw with simple tools.</desc>
+  </info>
+
+  <title>Classic tools</title>
+
+  <p>Draw on the image with the color and options you selected!</p>
+
+  <p>When you use a classic drawing tool, the options are located at the left of
+  the bottom bar: there are two colors, the tool size, and a menu (whose content
+  changes depending on the tool).</p>
+  <p>To better understand the options related to the colors, see
+  <link xref="tools_classic_colors">the explanations on this page</link>.</p>
+  <p>Many tools have a main option that can be toggled by pressing <key>Shift</key>
+  and/or <key>Alt</key> when you click to use the tool.</p>
+
+  <section id="basic-draw">
+    <title>Basic lines</title>
+
+    <list>
+      <item>
+        <p>Pencil: The pencil draws following the mouse pointer, and according
+        to the chosen color.</p>
+        <note style="tip">
+          <p>Using the "eraser" mode from the color menu, the pencil can delete
+          all existing colors. Using the "highlight" mode and a semi-transparent
+          color, it can also highlight text. For this reason, the two related
+          tools are <link xref="preferences#tools">optional</link>.</p>
+        </note>
+      </item>
+      <item>
+        <p>Highlighter: Ignore the transparency of the current color, and draw
+        with a semi-transparent version of the current color.</p>
+        <p>The "highlight" color application mode is used, so the selected color
+        is added to the lighter pixels only, which highlights dark text on light
+        background. An option can be used to do the opposite (highlight light
+        text on dark background).</p>
+      </item>
+      <item>
+        <p>Line: This tool can draw straight lines. Its options also include
+        ending the line with an arrow, and using a gradient from the main color
+        to the secondary color.</p>
+        <p>The option to lock the orientation of the line will force the line to
+        be perfectly horizontal, at 45°, or vertical.</p>
+      </item>
+      <item>
+        <p>Curve: This tool can draw Bézier curves, optionally with an arrow at
+        the end. Two clicks are required, if you only click once to draw a
+        straight line, that line is drawn temporarily until a second click.</p>
+        <media type="image" mime="image/png" width="80%" its:translate="no"
+               src="figures/screenshot_arrow.png" />
+      </item>
+    </list>
+
+    <p>Aside of the colors, a usual option for classic tools is whether or not
+    you want to use anti-aliasing. If you use anti-aliasing, the lines will look
+    smoother, but it may negatively affect any following use of the <gui
+    style="menuitem">Paint</gui> tool, as well as several options of the <link
+    xref="tools_selection">selection</link>.</p>
+    <p>With several tools, you can change the ends of the line: it can be
+    rounded or square. You can also draw various patterns of dashed lines with a
+    few tools.</p>
+    <p>The <gui style="menuitem">Outline</gui> option adds an outline around the
+    line you draw. This outline uses the secondary color, and is available with
+    the <gui style="menuitem">Pencil</gui>, <gui style="menuitem">Line</gui>,
+    and <gui style="menuitem">Curve</gui> tools.</p>
+  </section>
+
+  <section id="erase">
+    <title>Erase</title>
+
+    <p>The optional <gui style="menuitem">Eraser</gui> tool has several possible
+    behaviors:</p>
+    <list>
+      <item>
+        <p>It can erase according to the line you draw with the cursor, ignoring
+        the current color settings to just get fully transparent pixels.
+        Optionally, the erased pixels can be changed to the initial color of the
+        canvas (as set in the app preferences), or to the secondary color.</p>
+      </item>
+      <item>
+        <p>It can also erase a rectangular area: then you have more available
+        options: blur, mosaic, randomly shuffle pixels, etc. so you can — for
+        example — quickly censor text over wide areas of the image.</p>
+      </item>
+      <item>
+        <p>The option to <gui style="menuitem">remove color</gui> will erase all
+        the pixels where the color is the same as where you hovered or clicked,
+        across the entire image. It can be useful, for example, to cut out an
+        image from its background.</p>
+      </item>
+    </list>
+  </section>
+
+  <section id="brushes">
+    <title>Pressure-sensitive brushes</title>
+    <note style="warning">
+      <p>This tool is disabled by default, because it has performance issues.</p>
+    </note>
+
+    <p>If you use a drawing tablet and a stylus, you may appreciate the "brush"
+    tool, which reacts to the pressure of your input. Various possible brushes
+    are available:</p>
+    <list>
+      <item>
+        <p>Simple: this brush is basically a pencil with no options. The line
+        will be wider if you apply more pressure. Otherwise (if you use a mouse
+        for example), the width of the line will vary according to the speed of
+        your movement.</p>
+      </item>
+      <item>
+        <p>Airbrush: small "droplets" of color will be added to the canvas. If
+        you apply more pressure, there will be more droplets. Without a
+        pressure-sensitive device, their density is constant.</p>
+      </item>
+      <item>
+        <p>Hairy brush: thin parallel lines will be added to the canvas. If you
+        apply more pressure, the lines will be more outspread. Without a
+        pressure-sensitive device, their proximity is constant.</p>
+      </item>
+      <item>
+        <p>Calligraphic nib: this brush draws wider in one direction than in the
+        other, according to an angle which is an option of the brush. For a
+        given direction, the line will be wider if you apply more pressure.
+        Without a pressure-sensitive device, the width is constant for a given
+        direction.</p>
+      </item>
+    </list>
+  </section>
+
+  <section>
+    <title>Insert text</title>
+
+    <p>With the <gui style="menuitem">Text</gui> tool, you can insert text on
+    the image. A few formatting options are available in the options menu, such
+    as "italic", "bold", or a basic font family selection.</p>
+
+    <p>For better contrast, the text can be displayed on a rectangle background,
+    or with a shadow, or with an outline. The color of this background is the
+    secondary color you chose.</p>
+
+    <media type="image" mime="image/png" width="80%" its:translate="no"
+           src="figures/screenshot_text.png" />
+
+    <note style="tip">
+      <p>Don't forget to confirm the insertion using the <gui style="button">
+      Insert here</gui> button.</p>
+    </note>
+
+    <p>An optional tool named <gui style="menuitem">Points</gui> is designed to
+    help you captioning pictures: you can add numbered round dots or crosses to
+    elements of the picture.</p>
+  </section>
+
+  <section>
+    <title>Fill an area</title>
+
+    <p>To paint an area using a given color, several tools can be used:</p>
+
+    <list>
+      <item>
+        <p>Shapes. Available shapes include rectangle, rounded rectangle, oval,
+        circle, polygon, and free shape.</p>
+        <p>Polygons and free shapes are drawn in several clicks. To close them,
+        do a last click at the position where you began the shape, or use
+        the <gui style="menuitem">Close shape</gui> menu item.</p>
+        <p>Various filling options are available (using a plain color, or a
+        gradient, or nothing), as well as outline options (using a plain
+        outline, dashes, or nothing).</p>
+      </item>
+      <item>
+        <p>Paint. This tool tries to paint an area of a given color with a new
+        color.</p>
+        <note style="warning">
+          <p>This tool is disabled by default, because it will not work if the
+          shape to paint is too complex.</p>
+        </note>
+        <p>It can use several possible algorithms: <gui style="menuitem">
+        Encircle and fill</gui> is very simplistic and discouraged,
+        <gui style="menuitem">Erase and replace</gui> should work better, but
+        still fails in a few situations.</p>
+        <p>The <gui style="menuitem">Entire image</gui> option paints over the
+        the entire image, regardless of what's already drawn.</p>
+      </item>
+    </list>
+  </section>
+
+  <section>
+    <title>Other kinds of tools</title>
+
+    <p>The <link xref="tools_selection">selection tools</link> don't draw, but
+    their capabilities are very powerful and useful for any image editing.</p>
+
+    <p>Use <link xref="tools_transform">these special tools</link> to transform
+    the canvas or the selected area.</p>
+  </section>
+
+</page>
+
